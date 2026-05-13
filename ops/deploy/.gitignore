@@ -1,0 +1,8 @@
+# 部署相关的本地敏感文件,不进 git
+.env
+.env.*
+!.env.example
+
+# 临时同步目录
+.deploy-tmp/
+*.bak

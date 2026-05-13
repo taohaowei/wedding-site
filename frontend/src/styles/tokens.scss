@@ -1,0 +1,61 @@
+// 设计 Token — 全部颜色 / 字体 / 阴影统一在此
+$bg: #FAF6F0;       // 米白
+$accent: #F5A572;   // 暖橘霞光
+$accent-deep: #E58955;
+$soft: #FFD9B8;     // 淡橘
+$muted: #6E5C8E;    // 暮紫
+$pink: #F4C4C4;     // 软粉
+$dark: #1A1F36;     // 深夜墨蓝
+$text: #2D2118;
+$text-light: #6E5C5C;
+
+// 港式黑白主题
+$bw-bg: #1A1A1A;
+$bw-text: #F2F2F2;
+$bw-muted: #888;
+
+$serif-zh: 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+$serif-en: 'Cormorant Garamond', 'Times New Roman', serif;
+$sans: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+$shadow-sm: 0 2px 8px rgba(45, 33, 24, 0.08);
+$shadow-md: 0 8px 24px rgba(45, 33, 24, 0.12);
+$shadow-lg: 0 16px 48px rgba(45, 33, 24, 0.18);
+
+// 易复用 mixin
+@mixin full-screen {
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  padding: 0.85em 1.8em;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  font-family: $sans;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+
+  &:active { transform: scale(0.97); }
+  &:disabled { opacity: 0.5; cursor: not-allowed; }
+}

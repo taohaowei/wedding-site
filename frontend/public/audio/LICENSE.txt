@@ -1,0 +1,27 @@
+婚礼请柬 H5 BGM 音频版权说明
+=================================
+
+文件: bgm.mp3
+曲名: Wedding 01
+作者: Francisco Alvear
+来源: Mixkit (https://mixkit.co/free-stock-music/tag/wedding/)
+原始下载链接: https://assets.mixkit.co/music/657/657.mp3
+
+风格标签: Film Score / Reflective / Emotional / Harp / Piano / Nature
+原始时长: 2:25 (145.78s)
+原始码率: 256 kbps stereo / 44.1 kHz
+本地版本: 已用 ffmpeg 转码到 128 kbps stereo / 44.1 kHz, 文件大小约 2.2 MB
+
+版权类型: Mixkit Free License (Royalty-Free)
+完整许可: https://mixkit.co/license/
+
+许可摘要 (截至 2026-05):
+- 完全免费, 可用于个人和商业项目
+- 可用于 web、视频、广告、播客等任何媒体
+- 无需署名 (attribution NOT required)
+- 不可转售或单独再分发音乐文件本身
+
+注意:
+- 由于 Mixkit License 不强制署名, 本婚礼请柬 H5 无需在页面上标注作者。
+- 但若希望尊重创作者, 可在站点 README 或网页隐藏角落写一句:
+  "BGM: Wedding 01 by Francisco Alvear, via Mixkit"

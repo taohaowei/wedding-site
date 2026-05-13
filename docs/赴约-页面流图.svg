@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" font-family="sans-serif">
+  <rect width="1400" height="1000" fill="#FAF6F0"/>
+
+  <text x="700" y="40" font-size="26" font-weight="700" fill="#1A1F36" text-anchor="middle">赴约 · 12 屏页面流图</text>
+  <text x="700" y="64" font-size="13" fill="#6E5C8E" text-anchor="middle">主轴 = 垂直 Swiper 下滑 / 子轴 = 内嵌水平 Swiper 左滑(仅婚纱照)</text>
+
+  <!-- 左侧:主轴下滑指示 -->
+  <g>
+    <rect x="40" y="100" width="100" height="850" rx="8" fill="#FFF" stroke="#F5A572" stroke-width="2"/>
+    <text x="90" y="130" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">主轴</text>
+    <text x="90" y="150" font-size="12" fill="#6E5C8E" text-anchor="middle">下滑</text>
+    <line x1="90" y1="180" x2="90" y2="900" stroke="#F5A572" stroke-width="3" marker-end="url(#arrowDown)"/>
+    <text x="90" y="935" font-size="11" fill="#6E5C8E" text-anchor="middle">↓ vertical</text>
+  </g>
+
+  <!-- 屏卡片定义 -->
+  <!-- 屏 1: 封面 -->
+  <g>
+    <rect x="200" y="100" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="320" y="128" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 1 · 封面</text>
+    <text x="320" y="150" font-size="11" fill="#6E5C8E" text-anchor="middle">名字 / 日期 / 倒计时</text>
+    <text x="320" y="170" font-size="11" fill="#6E5C8E" text-anchor="middle">粒子流光 + 引导箭头</text>
+    <text x="320" y="195" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+
+  <!-- 屏 2-6: 故事 5 屏 -->
+  <g>
+    <rect x="200" y="240" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="320" y="268" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 2 · 故事①相亲</text>
+    <text x="320" y="290" font-size="11" fill="#6E5C8E" text-anchor="middle">陶 + 刘第一次见面</text>
+    <text x="320" y="310" font-size="11" fill="#6E5C8E" text-anchor="middle">打字机文案 · 插画</text>
+    <text x="320" y="335" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+  <g>
+    <rect x="200" y="380" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="320" y="408" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 3 · 故事②1 公里</text>
+    <text x="320" y="430" font-size="11" fill="#6E5C8E" text-anchor="middle">家在同一片街区</text>
+    <text x="320" y="475" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+  <g>
+    <rect x="200" y="520" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="320" y="548" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 4 · 故事③真诚</text>
+    <text x="320" y="570" font-size="11" fill="#6E5C8E" text-anchor="middle">第一次确认心意</text>
+    <text x="320" y="615" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+  <g>
+    <rect x="200" y="660" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="320" y="688" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 5 · 故事④五年</text>
+    <text x="320" y="710" font-size="11" fill="#6E5C8E" text-anchor="middle">五年长跑时间线</text>
+    <text x="320" y="755" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+  <g>
+    <rect x="200" y="800" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="320" y="828" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 6 · 故事⑤决定</text>
+    <text x="320" y="850" font-size="11" fill="#6E5C8E" text-anchor="middle">求婚决定 · 戒指特写</text>
+    <text x="320" y="895" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+
+  <!-- 屏 7-9: 婚纱照 (横向 swiper) -->
+  <g>
+    <rect x="500" y="380" width="640" height="240" rx="14" fill="#FFF8EE" stroke="#6E5C8E" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <text x="820" y="408" font-size="14" font-weight="700" fill="#6E5C8E" text-anchor="middle">屏 7-9 · 婚纱照三联屏(嵌套水平 Swiper)</text>
+    <text x="820" y="428" font-size="11" fill="#6E5C8E" text-anchor="middle">主轴停留时,内部水平左滑切换;滑到边界自动解锁主轴</text>
+
+    <rect x="520" y="450" width="180" height="150" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="610" y="478" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 7 · 主纱</text>
+    <text x="610" y="500" font-size="11" fill="#6E5C8E" text-anchor="middle">白色主纱 · 教堂感</text>
+    <text x="610" y="520" font-size="11" fill="#6E5C8E" text-anchor="middle">大图 + 浅金粒子</text>
+    <text x="610" y="572" font-size="10" fill="#F5A572" text-anchor="middle">slide 1/3</text>
+
+    <rect x="730" y="450" width="180" height="150" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="820" y="478" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 8 · 法式</text>
+    <text x="820" y="500" font-size="11" fill="#6E5C8E" text-anchor="middle">复古法式 · 暖色调</text>
+    <text x="820" y="520" font-size="11" fill="#6E5C8E" text-anchor="middle">花园 · 蕾丝</text>
+    <text x="820" y="572" font-size="10" fill="#F5A572" text-anchor="middle">slide 2/3</text>
+
+    <rect x="940" y="450" width="180" height="150" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="1030" y="478" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 9 · 港式黑白</text>
+    <text x="1030" y="500" font-size="11" fill="#6E5C8E" text-anchor="middle">港风胶片 · 黑白</text>
+    <text x="1030" y="520" font-size="11" fill="#6E5C8E" text-anchor="middle">硬光 · 烟火气</text>
+    <text x="1030" y="572" font-size="10" fill="#F5A572" text-anchor="middle">slide 3/3</text>
+
+    <!-- 横向滑动指示 -->
+    <line x1="700" y1="525" x2="730" y2="525" stroke="#6E5C8E" stroke-width="2" marker-end="url(#arrowRight)" marker-start="url(#arrowLeft)"/>
+    <line x1="910" y1="525" x2="940" y2="525" stroke="#6E5C8E" stroke-width="2" marker-end="url(#arrowRight)" marker-start="url(#arrowLeft)"/>
+  </g>
+  <text x="1180" y="500" font-size="14" fill="#6E5C8E">←→ 左滑切换</text>
+  <text x="1180" y="520" font-size="11" fill="#6E5C8E">Apple Tabs 风格</text>
+
+  <!-- 主轴上 屏7 占位 -->
+  <g>
+    <rect x="200" y="380" width="280" height="240" rx="10" fill="none" stroke="#6E5C8E" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="340" y="406" font-size="12" font-weight="700" fill="#6E5C8E" text-anchor="middle">主轴位置:屏 7-9</text>
+    <text x="340" y="426" font-size="11" fill="#6E5C8E" text-anchor="middle">在主轴中是 1 屏</text>
+    <text x="340" y="446" font-size="11" fill="#6E5C8E" text-anchor="middle">内部 3 张水平切换</text>
+    <text x="340" y="475" font-size="10" fill="#F5A572" text-anchor="middle">[嵌套水平]</text>
+  </g>
+
+  <!-- 屏 10: 婚礼信息 -->
+  <g>
+    <rect x="500" y="660" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="620" y="688" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 10 · 婚礼信息</text>
+    <text x="620" y="710" font-size="11" fill="#6E5C8E" text-anchor="middle">流程时间线 · 地图嵌入</text>
+    <text x="620" y="730" font-size="11" fill="#6E5C8E" text-anchor="middle">东方国际酒店地址</text>
+    <text x="620" y="755" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+
+  <!-- 屏 11: RSVP -->
+  <g>
+    <rect x="800" y="660" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2.5"/>
+    <text x="920" y="688" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 11 · RSVP 表单</text>
+    <text x="920" y="710" font-size="11" fill="#6E5C8E" text-anchor="middle">出席/人数/住宿/忌口</text>
+    <text x="920" y="730" font-size="11" fill="#6E5C8E" text-anchor="middle">VeeValidate + zod</text>
+    <text x="920" y="755" font-size="10" fill="#F5A572" text-anchor="middle">[POST /api/rsvp]</text>
+  </g>
+
+  <!-- 屏 12: 致谢 -->
+  <g>
+    <rect x="1100" y="660" width="240" height="120" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="1220" y="688" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">屏 12 · 致谢</text>
+    <text x="1220" y="710" font-size="11" fill="#6E5C8E" text-anchor="middle">谢谢你的祝福</text>
+    <text x="1220" y="730" font-size="11" fill="#6E5C8E" text-anchor="middle">音乐 fadeout · 末尾</text>
+    <text x="1220" y="755" font-size="10" fill="#1A1F36" text-anchor="middle">[纯下滑]</text>
+  </g>
+
+  <!-- 主轴占位 屏10/11/12 -->
+  <g>
+    <rect x="200" y="660" width="280" height="120" rx="10" fill="none" stroke="#6E5C8E" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="340" y="688" font-size="12" font-weight="700" fill="#6E5C8E" text-anchor="middle">主轴位置:屏 10</text>
+    <text x="340" y="710" font-size="11" fill="#6E5C8E" text-anchor="middle">→ 实际内容看右侧</text>
+  </g>
+  <g>
+    <rect x="200" y="800" width="280" height="120" rx="10" fill="none" stroke="#6E5C8E" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="340" y="828" font-size="12" font-weight="700" fill="#6E5C8E" text-anchor="middle">主轴位置:屏 11 / 12</text>
+    <text x="340" y="850" font-size="11" fill="#6E5C8E" text-anchor="middle">→ 实际内容看右侧</text>
+  </g>
+
+  <!-- 图例 -->
+  <g>
+    <rect x="500" y="100" width="700" height="240" rx="10" fill="#FFF" stroke="#1A1F36" stroke-width="1.5"/>
+    <text x="850" y="128" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">交互规则与图例</text>
+    <text x="520" y="158" font-size="12" fill="#1A1F36">• 主轴垂直 Swiper:speed=600ms,spaceBetween=0,touchRatio=1</text>
+    <text x="520" y="180" font-size="12" fill="#1A1F36">• 屏 7-9 内部水平 Swiper:nested=true,resistance 边界回弹</text>
+    <text x="520" y="202" font-size="12" fill="#1A1F36">• 子 swiper 滑到首/尾时,自动允许主轴接管(touchMoveStopPropagation 切换)</text>
+    <text x="520" y="224" font-size="12" fill="#1A1F36">• 进度条:屏 1→12 顶部细线推进(useScrollProgress composable)</text>
+    <text x="520" y="246" font-size="12" fill="#1A1F36">• 鼠标滚轮:mousewheel.forceToAxis=true(避免误触水平)</text>
+    <text x="520" y="268" font-size="12" fill="#1A1F36">• 微信兜底:首次 touchstart 解锁 BGM autoplay,WeixinJSBridgeReady</text>
+    <text x="520" y="290" font-size="12" fill="#1A1F36">• 高度统一 100dvh,iOS 旧版用 --vh CSS 变量 + JS resize 兜底</text>
+    <text x="520" y="312" font-size="12" fill="#1A1F36">• 入场动效:GSAP ScrollTrigger 监听当前 active slide,触发文案/插画进入</text>
+  </g>
+
+  <defs>
+    <marker id="arrowDown" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 0 L 5 10 z" fill="#F5A572"/>
+    </marker>
+    <marker id="arrowRight" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6E5C8E"/>
+    </marker>
+    <marker id="arrowLeft" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#6E5C8E"/>
+    </marker>
+  </defs>
+</svg>

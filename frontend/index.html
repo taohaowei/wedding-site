@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <meta name="theme-color" content="#FAF6F0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no,email=no,date=no" />
+  <title>陶浩伟 ✕ 刘雨晴 · 赴约</title>
+  <style>
+    html, body { background: #FAF6F0; color: #2D2118; }
+    body, #app { margin: 0; padding: 0; min-height: 100dvh; min-height: calc(var(--vh, 1vh) * 100); }
+    /* 首屏 loading 占位,防止白屏 */
+    .__boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; font-family: serif; color: #6E5C8E; letter-spacing: .2em; }
+    .__boot::after { content: '· · ·'; animation: __dot 1.4s infinite; }
+    @keyframes __dot { 0%,100%{opacity:.3} 50%{opacity:1} }
+  </style>
+</head>
+<body>
+  <div id="app"><div class="__boot">L O A D I N G</div></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

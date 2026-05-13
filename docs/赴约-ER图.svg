@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" font-family="sans-serif">
+  <rect width="1400" height="900" fill="#FAF6F0"/>
+
+  <text x="700" y="40" font-size="26" font-weight="700" fill="#1A1F36" text-anchor="middle">赴约 · 数据库 ER 图</text>
+  <text x="700" y="64" font-size="13" fill="#6E5C8E" text-anchor="middle">SQLite · 单文件 /var/wedding/data.db · 仅 2 张表 · 无外键关联(独立用途)</text>
+
+  <!-- rsvps 表 -->
+  <g>
+    <rect x="120" y="140" width="500" height="560" rx="14" fill="#FFF" stroke="#F5A572" stroke-width="3"/>
+    <rect x="120" y="140" width="500" height="56" rx="14" fill="#F5A572"/>
+    <text x="370" y="178" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">rsvps  (宾客回执)</text>
+
+    <!-- 表头 -->
+    <line x1="120" y1="220" x2="620" y2="220" stroke="#1A1F36" stroke-width="1"/>
+    <text x="148" y="240" font-size="13" font-weight="700" fill="#1A1F36">PK</text>
+    <text x="220" y="240" font-size="13" font-weight="700" fill="#1A1F36">字段名</text>
+    <text x="380" y="240" font-size="13" font-weight="700" fill="#1A1F36">类型</text>
+    <text x="500" y="240" font-size="13" font-weight="700" fill="#1A1F36">说明</text>
+    <line x1="120" y1="250" x2="620" y2="250" stroke="#6E5C8E" stroke-width="1"/>
+
+    <!-- 字段行 -->
+    <g font-size="12" fill="#1A1F36">
+      <text x="148" y="276">🔑</text>
+      <text x="220" y="276">id</text>
+      <text x="380" y="276">INTEGER</text>
+      <text x="500" y="276">自增主键</text>
+
+      <text x="220" y="306">name</text>
+      <text x="380" y="306">TEXT NOT NULL</text>
+      <text x="500" y="306">宾客姓名</text>
+
+      <text x="220" y="336">attending</text>
+      <text x="380" y="336">INTEGER</text>
+      <text x="500" y="336">1=出席 / 0=不出席</text>
+
+      <text x="220" y="366">headcount</text>
+      <text x="380" y="366">INTEGER</text>
+      <text x="500" y="366">出席人数(含本人)</text>
+
+      <text x="220" y="396">need_lodging</text>
+      <text x="380" y="396">INTEGER</text>
+      <text x="500" y="396">是否需要酒店住宿</text>
+
+      <text x="220" y="426">dietary</text>
+      <text x="380" y="426">TEXT</text>
+      <text x="500" y="426">忌口/饮食备注</text>
+
+      <text x="220" y="456">message</text>
+      <text x="380" y="456">TEXT</text>
+      <text x="500" y="456">给新人的留言(可选)</text>
+
+      <text x="220" y="486">created_at</text>
+      <text x="380" y="486">TEXT</text>
+      <text x="500" y="486">ISO8601 时间戳</text>
+
+      <text x="220" y="516">ip</text>
+      <text x="380" y="516">TEXT</text>
+      <text x="500" y="516">客户端 IP(限频用)</text>
+
+      <text x="220" y="546">user_agent</text>
+      <text x="380" y="546">TEXT</text>
+      <text x="500" y="546">UA 字符串(分析用)</text>
+    </g>
+
+    <!-- 索引 -->
+    <line x1="120" y1="580" x2="620" y2="580" stroke="#6E5C8E" stroke-width="1"/>
+    <text x="148" y="606" font-size="13" font-weight="700" fill="#6E5C8E">索引:</text>
+    <text x="220" y="606" font-size="12" fill="#1A1F36">idx_rsvps_created_at(created_at DESC)</text>
+    <text x="220" y="630" font-size="12" fill="#1A1F36">idx_rsvps_ip_created(ip, created_at) — 限频查询</text>
+
+    <!-- 约束 -->
+    <text x="148" y="660" font-size="13" font-weight="700" fill="#6E5C8E">约束:</text>
+    <text x="220" y="660" font-size="12" fill="#1A1F36">attending CHECK(0,1) · headcount CHECK(0..20)</text>
+    <text x="220" y="684" font-size="12" fill="#1A1F36">CREATE TRIGGER 自动写 created_at = datetime('now')</text>
+  </g>
+
+  <!-- admin_sessions 表 -->
+  <g>
+    <rect x="780" y="140" width="500" height="380" rx="14" fill="#FFF" stroke="#6E5C8E" stroke-width="3"/>
+    <rect x="780" y="140" width="500" height="56" rx="14" fill="#6E5C8E"/>
+    <text x="1030" y="178" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">admin_sessions  (后台会话)</text>
+
+    <line x1="780" y1="220" x2="1280" y2="220" stroke="#1A1F36" stroke-width="1"/>
+    <text x="808" y="240" font-size="13" font-weight="700" fill="#1A1F36">PK</text>
+    <text x="880" y="240" font-size="13" font-weight="700" fill="#1A1F36">字段名</text>
+    <text x="1040" y="240" font-size="13" font-weight="700" fill="#1A1F36">类型</text>
+    <text x="1160" y="240" font-size="13" font-weight="700" fill="#1A1F36">说明</text>
+    <line x1="780" y1="250" x2="1280" y2="250" stroke="#6E5C8E" stroke-width="1"/>
+
+    <g font-size="12" fill="#1A1F36">
+      <text x="808" y="276">🔑</text>
+      <text x="880" y="276">token</text>
+      <text x="1040" y="276">TEXT</text>
+      <text x="1160" y="276">64 字节随机十六进制</text>
+
+      <text x="880" y="306">expires_at</text>
+      <text x="1040" y="306">TEXT</text>
+      <text x="1160" y="306">ISO8601 过期时间</text>
+
+      <text x="880" y="336">created_at</text>
+      <text x="1040" y="336">TEXT</text>
+      <text x="1160" y="336">登录时间</text>
+
+      <text x="880" y="366">ip</text>
+      <text x="1040" y="366">TEXT</text>
+      <text x="1160" y="366">登录 IP(可疑则告警)</text>
+    </g>
+
+    <line x1="780" y1="400" x2="1280" y2="400" stroke="#6E5C8E" stroke-width="1"/>
+    <text x="808" y="426" font-size="13" font-weight="700" fill="#6E5C8E">索引:</text>
+    <text x="880" y="426" font-size="12" fill="#1A1F36">idx_sessions_expires(expires_at)</text>
+
+    <text x="808" y="456" font-size="13" font-weight="700" fill="#6E5C8E">维护:</text>
+    <text x="880" y="456" font-size="12" fill="#1A1F36">每次启动 + 每 1h DELETE WHERE expires_at < now()</text>
+    <text x="880" y="478" font-size="12" fill="#1A1F36">默认 TTL = 7 天</text>
+
+    <text x="808" y="504" font-size="11" fill="#6E5C8E">说明: 不存用户 (只有一个新人账号),token 即身份</text>
+  </g>
+
+  <!-- 关系说明 -->
+  <g>
+    <rect x="780" y="560" width="500" height="140" rx="10" fill="#FFF" stroke="#1A1F36" stroke-width="1.5"/>
+    <text x="1030" y="588" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">表关系</text>
+    <text x="800" y="616" font-size="12" fill="#1A1F36">两张表之间无外键关联,各司其职:</text>
+    <text x="800" y="640" font-size="12" fill="#6E5C8E">• rsvps  ←  公开 POST 写入,后台 GET 读出</text>
+    <text x="800" y="664" font-size="12" fill="#6E5C8E">• admin_sessions  ←  仅后台登录创建,中间件读取校验</text>
+    <text x="800" y="688" font-size="12" fill="#6E5C8E">• 数据本地化,无第三方依赖</text>
+  </g>
+
+  <!-- 备份策略 -->
+  <g>
+    <rect x="120" y="720" width="1160" height="140" rx="10" fill="#FFF8EE" stroke="#F5A572" stroke-width="1.5"/>
+    <text x="700" y="748" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">备份与运维</text>
+    <text x="160" y="776" font-size="12" fill="#1A1F36">• 每日 cron:sqlite3 data.db ".backup '/var/wedding/backup/data-$(date +%F).db'" → 保留 30 天</text>
+    <text x="160" y="800" font-size="12" fill="#1A1F36">• WAL 模式:PRAGMA journal_mode=WAL,提升并发读写性能,适合本场景(读多写少)</text>
+    <text x="160" y="824" font-size="12" fill="#1A1F36">• 文件权限:chmod 600,owner=node 进程用户;Nginx 不能直接读到 db 文件</text>
+    <text x="160" y="848" font-size="12" fill="#1A1F36">• 出问题恢复:scp 拉一份 .db 到本地用 DBeaver / sqlitebrowser 查看;新人随时一键 CSV 导出</text>
+  </g>
+</svg>

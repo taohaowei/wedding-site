@@ -1,0 +1,18 @@
+// 自托管 Cormorant Garamond（避免国内访问 fonts.googleapis.com 阻塞渲染）
+// woff2 文件位于 public/fonts/cormorant/，构建后部署到 /fonts/cormorant/
+// normal woff2 同时覆盖 400/500/600 字重（Google Fonts v21 latin 子集本身就是同一文件）
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/cormorant/cormorant-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant/cormorant-italic.woff2') format('woff2');
+}

@@ -1,0 +1,51 @@
+# 系统/编辑器
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 依赖
+node_modules/
+.npm/
+.pnpm-store/
+
+# 构建产物
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# 测试/调试
+coverage/
+.nyc_output/
+.playwright-mcp/
+
+# 环境/秘密(切勿入库)
+.env
+.env.*
+!.env.example
+.secrets/
+*.pem
+*.key
+
+# 本地数据
+backend/data/
+*.db
+*.db-shm
+*.db-wal
+
+# 早期备份目录(顶层 public/,frontend/public/ 不受影响)
+/public/
+
+# 真人参考照(隐私,本地 backup)
+_references/
+
+# 临时
+tmp/
+.tmp/

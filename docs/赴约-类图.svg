@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" font-family="sans-serif">
+  <rect width="1400" height="1000" fill="#FAF6F0"/>
+
+  <text x="700" y="40" font-size="26" font-weight="700" fill="#1A1F36" text-anchor="middle">赴约 · 前端类图与职责分层</text>
+  <text x="700" y="64" font-size="13" fill="#6E5C8E" text-anchor="middle">Vue 3 SFC · Composition API · 单向依赖 · 5 层架构</text>
+
+  <!-- 分层背景条带 -->
+  <g opacity="0.3">
+    <rect x="40" y="100" width="1320" height="120" fill="#F5A572"/>
+    <rect x="40" y="240" width="1320" height="100" fill="#FFE3C4"/>
+    <rect x="40" y="360" width="1320" height="200" fill="#E8E0F0"/>
+    <rect x="40" y="580" width="1320" height="180" fill="#FFF1DA"/>
+    <rect x="40" y="780" width="1320" height="180" fill="#E0DCEB"/>
+  </g>
+
+  <!-- 层标签 -->
+  <g font-size="13" font-weight="700" fill="#1A1F36">
+    <text x="60" y="124">① pages (路由级页面)</text>
+    <text x="60" y="262">② layouts (容器/滚动)</text>
+    <text x="60" y="382">③ sections (按屏组装的业务区块)</text>
+    <text x="60" y="602">④ components (可复用 UI/动效)</text>
+    <text x="60" y="802">⑤ composables / api / store (逻辑层)</text>
+  </g>
+
+  <!-- ① pages -->
+  <g>
+    <rect x="380" y="130" width="220" height="80" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="490" y="156" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">HomePage.vue</text>
+    <text x="490" y="178" font-size="11" fill="#6E5C8E" text-anchor="middle">/ 路由,挂载主滚动容器</text>
+    <text x="490" y="196" font-size="11" fill="#6E5C8E" text-anchor="middle">注入 BgmPlayer / ParticleBg</text>
+
+    <rect x="780" y="130" width="220" height="80" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="890" y="156" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">AdminPage.vue</text>
+    <text x="890" y="178" font-size="11" fill="#6E5C8E" text-anchor="middle">/admin 路由</text>
+    <text x="890" y="196" font-size="11" fill="#6E5C8E" text-anchor="middle">登录态切换:Login / Dashboard</text>
+  </g>
+
+  <!-- ② layouts -->
+  <g>
+    <rect x="380" y="260" width="220" height="70" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="490" y="286" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">ScrollContainer.vue</text>
+    <text x="490" y="306" font-size="11" fill="#6E5C8E" text-anchor="middle">垂直 Swiper · 100dvh / slide</text>
+    <text x="490" y="322" font-size="11" fill="#6E5C8E" text-anchor="middle">提供 onSlideChange 事件</text>
+
+    <rect x="780" y="260" width="220" height="70" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="890" y="286" font-size="14" font-weight="700" fill="#1A1F36" text-anchor="middle">AdminLayout.vue</text>
+    <text x="890" y="306" font-size="11" fill="#6E5C8E" text-anchor="middle">PC 表格布局 + Header</text>
+  </g>
+
+  <!-- ③ sections (6 个) -->
+  <g>
+    <rect x="60" y="400" width="200" height="140" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="160" y="426" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">CoverSection</text>
+    <text x="160" y="448" font-size="11" fill="#6E5C8E" text-anchor="middle">屏 1</text>
+    <text x="160" y="468" font-size="11" fill="#6E5C8E" text-anchor="middle">名字 + 倒计时</text>
+    <text x="160" y="488" font-size="11" fill="#6E5C8E" text-anchor="middle">+ ParticleBg</text>
+    <text x="160" y="510" font-size="11" fill="#6E5C8E" text-anchor="middle">+ CountdownTimer</text>
+
+    <rect x="280" y="400" width="200" height="140" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="380" y="426" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">StorySection</text>
+    <text x="380" y="448" font-size="11" fill="#6E5C8E" text-anchor="middle">屏 2-6 (重复 5 次)</text>
+    <text x="380" y="468" font-size="11" fill="#6E5C8E" text-anchor="middle">props: { story }</text>
+    <text x="380" y="488" font-size="11" fill="#6E5C8E" text-anchor="middle">+ TypeAnimation</text>
+    <text x="380" y="510" font-size="11" fill="#6E5C8E" text-anchor="middle">+ GSAP 入场</text>
+
+    <rect x="500" y="400" width="200" height="140" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="600" y="426" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">PhotoSection</text>
+    <text x="600" y="448" font-size="11" fill="#6E5C8E" text-anchor="middle">屏 7-9 (在主轴1 屏)</text>
+    <text x="600" y="468" font-size="11" fill="#6E5C8E" text-anchor="middle">内嵌 PhotoSwiper</text>
+    <text x="600" y="488" font-size="11" fill="#6E5C8E" text-anchor="middle">3 张照片左滑</text>
+    <text x="600" y="510" font-size="11" fill="#6E5C8E" text-anchor="middle">边界释放主轴</text>
+
+    <rect x="720" y="400" width="200" height="140" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="820" y="426" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">VenueSection</text>
+    <text x="820" y="448" font-size="11" fill="#6E5C8E" text-anchor="middle">屏 10</text>
+    <text x="820" y="468" font-size="11" fill="#6E5C8E" text-anchor="middle">流程时间线</text>
+    <text x="820" y="488" font-size="11" fill="#6E5C8E" text-anchor="middle">高德/腾讯地图静态图</text>
+    <text x="820" y="510" font-size="11" fill="#6E5C8E" text-anchor="middle">点击调起原生导航</text>
+
+    <rect x="940" y="400" width="200" height="140" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="1040" y="426" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">RsvpSection</text>
+    <text x="1040" y="448" font-size="11" fill="#6E5C8E" text-anchor="middle">屏 11</text>
+    <text x="1040" y="468" font-size="11" fill="#6E5C8E" text-anchor="middle">挂载 FormStepper</text>
+    <text x="1040" y="488" font-size="11" fill="#6E5C8E" text-anchor="middle">用 useRsvpStore</text>
+    <text x="1040" y="510" font-size="11" fill="#6E5C8E" text-anchor="middle">提交后跳屏 12</text>
+
+    <rect x="1160" y="400" width="200" height="140" rx="8" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="1260" y="426" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">ThanksSection</text>
+    <text x="1260" y="448" font-size="11" fill="#6E5C8E" text-anchor="middle">屏 12</text>
+    <text x="1260" y="468" font-size="11" fill="#6E5C8E" text-anchor="middle">致谢动画</text>
+    <text x="1260" y="488" font-size="11" fill="#6E5C8E" text-anchor="middle">音乐 fadeOut</text>
+  </g>
+
+  <!-- ④ components -->
+  <g>
+    <rect x="60" y="620" width="180" height="120" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="150" y="644" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">ParticleBg</text>
+    <text x="150" y="664" font-size="11" fill="#6E5C8E" text-anchor="middle">tsParticles 包装</text>
+    <text x="150" y="682" font-size="11" fill="#6E5C8E" text-anchor="middle">prop: density/color</text>
+    <text x="150" y="700" font-size="11" fill="#6E5C8E" text-anchor="middle">CoverSection 用</text>
+
+    <rect x="260" y="620" width="180" height="120" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="350" y="644" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">TypeAnimation</text>
+    <text x="350" y="664" font-size="11" fill="#6E5C8E" text-anchor="middle">打字机文字</text>
+    <text x="350" y="682" font-size="11" fill="#6E5C8E" text-anchor="middle">GSAP TextPlugin</text>
+    <text x="350" y="700" font-size="11" fill="#6E5C8E" text-anchor="middle">StorySection 用</text>
+
+    <rect x="460" y="620" width="180" height="120" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="550" y="644" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">PhotoSwiper</text>
+    <text x="550" y="664" font-size="11" fill="#6E5C8E" text-anchor="middle">水平 Swiper</text>
+    <text x="550" y="682" font-size="11" fill="#6E5C8E" text-anchor="middle">prop: photos[]</text>
+    <text x="550" y="700" font-size="11" fill="#6E5C8E" text-anchor="middle">PhotoSection 用</text>
+
+    <rect x="660" y="620" width="180" height="120" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="750" y="644" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">FormStepper</text>
+    <text x="750" y="664" font-size="11" fill="#6E5C8E" text-anchor="middle">分步表单</text>
+    <text x="750" y="682" font-size="11" fill="#6E5C8E" text-anchor="middle">VeeValidate + zod</text>
+    <text x="750" y="700" font-size="11" fill="#6E5C8E" text-anchor="middle">RsvpSection 用</text>
+
+    <rect x="860" y="620" width="180" height="120" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="950" y="644" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">CountdownTimer</text>
+    <text x="950" y="664" font-size="11" fill="#6E5C8E" text-anchor="middle">距 6/13 倒计时</text>
+    <text x="950" y="682" font-size="11" fill="#6E5C8E" text-anchor="middle">setInterval 1s</text>
+
+    <rect x="1060" y="620" width="180" height="120" rx="8" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="1150" y="644" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">BgmPlayer</text>
+    <text x="1150" y="664" font-size="11" fill="#6E5C8E" text-anchor="middle">背景音乐</text>
+    <text x="1150" y="682" font-size="11" fill="#6E5C8E" text-anchor="middle">微信 Bridge 兜底</text>
+    <text x="1150" y="700" font-size="11" fill="#6E5C8E" text-anchor="middle">右上角喇叭按钮</text>
+  </g>
+
+  <!-- ⑤ composables / api / store -->
+  <g>
+    <rect x="60" y="820" width="200" height="120" rx="8" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="160" y="844" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">useScrollProgress</text>
+    <text x="160" y="864" font-size="11" fill="#6E5C8E" text-anchor="middle">composable</text>
+    <text x="160" y="882" font-size="11" fill="#6E5C8E" text-anchor="middle">监听当前 slideIdx</text>
+    <text x="160" y="902" font-size="11" fill="#6E5C8E" text-anchor="middle">返回 progress 0..1</text>
+
+    <rect x="280" y="820" width="200" height="120" rx="8" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="380" y="844" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">useGyroParallax</text>
+    <text x="380" y="864" font-size="11" fill="#6E5C8E" text-anchor="middle">陀螺仪 → 视差</text>
+    <text x="380" y="882" font-size="11" fill="#6E5C8E" text-anchor="middle">DeviceMotion API</text>
+    <text x="380" y="902" font-size="11" fill="#6E5C8E" text-anchor="middle">iOS 13+ 需授权</text>
+
+    <rect x="500" y="820" width="200" height="120" rx="8" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="600" y="844" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">useRsvpStore</text>
+    <text x="600" y="864" font-size="11" fill="#6E5C8E" text-anchor="middle">Pinia store</text>
+    <text x="600" y="882" font-size="11" fill="#6E5C8E" text-anchor="middle">draft / submit / status</text>
+    <text x="600" y="902" font-size="11" fill="#6E5C8E" text-anchor="middle">localStorage 持久化</text>
+
+    <rect x="720" y="820" width="200" height="120" rx="8" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="820" y="844" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">useAdminAuth</text>
+    <text x="820" y="864" font-size="11" fill="#6E5C8E" text-anchor="middle">Pinia store</text>
+    <text x="820" y="882" font-size="11" fill="#6E5C8E" text-anchor="middle">登录/登出/状态</text>
+    <text x="820" y="902" font-size="11" fill="#6E5C8E" text-anchor="middle">cookie 自动携带</text>
+
+    <rect x="940" y="820" width="200" height="120" rx="8" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="1040" y="844" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">api/client.ts</text>
+    <text x="1040" y="864" font-size="11" fill="#6E5C8E" text-anchor="middle">Axios 实例封装</text>
+    <text x="1040" y="882" font-size="11" fill="#6E5C8E" text-anchor="middle">baseURL=/api</text>
+    <text x="1040" y="902" font-size="11" fill="#6E5C8E" text-anchor="middle">withCredentials: true</text>
+
+    <rect x="1160" y="820" width="200" height="120" rx="8" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="1260" y="844" font-size="13" font-weight="700" fill="#1A1F36" text-anchor="middle">api/types.ts</text>
+    <text x="1260" y="864" font-size="11" fill="#6E5C8E" text-anchor="middle">RSVPPayload</text>
+    <text x="1260" y="882" font-size="11" fill="#6E5C8E" text-anchor="middle">RSVPResponse</text>
+    <text x="1260" y="902" font-size="11" fill="#6E5C8E" text-anchor="middle">AdminLoginPayload</text>
+  </g>
+
+  <!-- 依赖箭头 -->
+  <g stroke="#6E5C8E" stroke-width="1.5" fill="none">
+    <!-- HomePage → ScrollContainer -->
+    <line x1="490" y1="210" x2="490" y2="260" marker-end="url(#dep)"/>
+    <!-- AdminPage → AdminLayout -->
+    <line x1="890" y1="210" x2="890" y2="260" marker-end="url(#dep)"/>
+    <!-- ScrollContainer → 6 个 sections -->
+    <line x1="450" y1="330" x2="160" y2="400" marker-end="url(#dep)"/>
+    <line x1="470" y1="330" x2="380" y2="400" marker-end="url(#dep)"/>
+    <line x1="490" y1="330" x2="600" y2="400" marker-end="url(#dep)"/>
+    <line x1="510" y1="330" x2="820" y2="400" marker-end="url(#dep)"/>
+    <line x1="530" y1="330" x2="1040" y2="400" marker-end="url(#dep)"/>
+    <line x1="550" y1="330" x2="1260" y2="400" marker-end="url(#dep)"/>
+    <!-- AdminLayout → admin 表格 (用 useAdminAuth + api) -->
+    <line x1="890" y1="330" x2="820" y2="820" marker-end="url(#dep)" stroke-dasharray="4,3"/>
+    <!-- sections → components -->
+    <line x1="160" y1="540" x2="150" y2="620" marker-end="url(#dep)"/>
+    <line x1="380" y1="540" x2="350" y2="620" marker-end="url(#dep)"/>
+    <line x1="600" y1="540" x2="550" y2="620" marker-end="url(#dep)"/>
+    <line x1="1040" y1="540" x2="750" y2="620" marker-end="url(#dep)"/>
+    <line x1="160" y1="540" x2="950" y2="620" marker-end="url(#dep)" stroke-dasharray="2,2"/>
+    <line x1="490" y1="210" x2="1150" y2="620" marker-end="url(#dep)" stroke-dasharray="2,2"/>
+    <!-- components → composables/api -->
+    <line x1="750" y1="740" x2="600" y2="820" marker-end="url(#dep)"/>
+    <line x1="750" y1="740" x2="1040" y2="820" marker-end="url(#dep)"/>
+    <line x1="600" y1="820" x2="1040" y2="820" marker-end="url(#dep)" stroke-dasharray="2,2"/>
+  </g>
+
+  <defs>
+    <marker id="dep" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6E5C8E"/>
+    </marker>
+  </defs>
+</svg>

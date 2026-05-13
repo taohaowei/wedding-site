@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" font-family="sans-serif">
+  <!-- 背景 -->
+  <rect width="1400" height="900" fill="#FAF6F0"/>
+
+  <!-- 标题 -->
+  <text x="700" y="44" font-size="26" font-weight="700" fill="#1A1F36" text-anchor="middle">赴约 · 系统全景图</text>
+  <text x="700" y="70" font-size="14" fill="#6E5C8E" text-anchor="middle">手机端 H5 · 阿里云香港 ECS · 零外部依赖</text>
+
+  <!-- 三个用户角色 -->
+  <!-- 角色 1: 宾客手机 -->
+  <g>
+    <rect x="60" y="120" width="200" height="120" rx="12" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="160" y="158" font-size="18" font-weight="700" fill="#1A1F36" text-anchor="middle">宾客</text>
+    <text x="160" y="184" font-size="13" fill="#6E5C8E" text-anchor="middle">微信内 / Safari / Chrome</text>
+    <text x="160" y="206" font-size="12" fill="#6E5C8E" text-anchor="middle">扫码或点击短链打开</text>
+    <text x="160" y="226" font-size="12" fill="#1A1F36" text-anchor="middle">https://mynight.top</text>
+  </g>
+
+  <!-- 角色 2: 新人后台 -->
+  <g>
+    <rect x="60" y="380" width="200" height="120" rx="12" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="160" y="418" font-size="18" font-weight="700" fill="#1A1F36" text-anchor="middle">新人 (后台)</text>
+    <text x="160" y="444" font-size="13" fill="#6E5C8E" text-anchor="middle">PC 浏览器</text>
+    <text x="160" y="466" font-size="12" fill="#6E5C8E" text-anchor="middle">密码登录看 RSVP</text>
+    <text x="160" y="486" font-size="12" fill="#1A1F36" text-anchor="middle">mynight.top/admin</text>
+  </g>
+
+  <!-- 角色 3: 开发者本地 -->
+  <g>
+    <rect x="60" y="640" width="200" height="120" rx="12" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="160" y="678" font-size="18" font-weight="700" fill="#1A1F36" text-anchor="middle">开发者</text>
+    <text x="160" y="704" font-size="13" fill="#6E5C8E" text-anchor="middle">本地 macOS</text>
+    <text x="160" y="726" font-size="12" fill="#6E5C8E" text-anchor="middle">SSH / Git / scp</text>
+    <text x="160" y="746" font-size="12" fill="#1A1F36" text-anchor="middle">部署 dist 与后端</text>
+  </g>
+
+  <!-- Cloudflare CDN -->
+  <g>
+    <rect x="380" y="200" width="200" height="120" rx="12" fill="#fff" stroke="#F5A572" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="480" y="232" font-size="16" font-weight="700" fill="#1A1F36" text-anchor="middle">Cloudflare CDN</text>
+    <text x="480" y="256" font-size="12" fill="#6E5C8E" text-anchor="middle">(可选,二选一)</text>
+    <text x="480" y="278" font-size="11" fill="#6E5C8E" text-anchor="middle">DNS / TLS / 全球缓存</text>
+    <text x="480" y="296" font-size="11" fill="#6E5C8E" text-anchor="middle">国内大陆网络优化</text>
+    <text x="480" y="314" font-size="11" fill="#1A1F36" text-anchor="middle">缓存 dist 静态资源</text>
+  </g>
+
+  <!-- 阿里云 ECS 大框 -->
+  <g>
+    <rect x="700" y="120" width="620" height="640" rx="14" fill="#FFF8EE" stroke="#F5A572" stroke-width="2.5"/>
+    <text x="1010" y="152" font-size="18" font-weight="700" fill="#1A1F36" text-anchor="middle">阿里云香港 ECS  ·  Ubuntu 22 · 2C2G</text>
+    <text x="1010" y="174" font-size="12" fill="#6E5C8E" text-anchor="middle">公网 IP + 域名 mynight.top · Let's Encrypt SSL · 防火墙仅放行 80/443/22</text>
+
+    <!-- Nginx -->
+    <rect x="730" y="200" width="560" height="120" rx="10" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="1010" y="232" font-size="16" font-weight="700" fill="#1A1F36" text-anchor="middle">Nginx 1.24 (反向代理 + 静态托管)</text>
+    <text x="1010" y="256" font-size="12" fill="#6E5C8E" text-anchor="middle">443 入口 · gzip · HTTP/2 · SPA fallback · TLS 终止</text>
+    <text x="800" y="286" font-size="12" fill="#1A1F36" text-anchor="middle">/  →  Vue SPA (dist/)</text>
+    <text x="1010" y="286" font-size="12" fill="#1A1F36" text-anchor="middle">/api/* → 127.0.0.1:3000</text>
+    <text x="1220" y="286" font-size="12" fill="#1A1F36" text-anchor="middle">/admin → SPA (前端校验)</text>
+    <text x="1010" y="306" font-size="11" fill="#6E5C8E" text-anchor="middle">Cache-Control 静态长缓存 · index.html no-cache</text>
+
+    <!-- Vue SPA -->
+    <rect x="730" y="360" width="260" height="160" rx="10" fill="#fff" stroke="#F5A572" stroke-width="2"/>
+    <text x="860" y="390" font-size="15" font-weight="700" fill="#1A1F36" text-anchor="middle">Vue 3 SPA  (dist/)</text>
+    <text x="860" y="412" font-size="12" fill="#6E5C8E" text-anchor="middle">Vite 构建 · TS · Pinia</text>
+    <text x="860" y="432" font-size="12" fill="#6E5C8E" text-anchor="middle">Swiper 11 / GSAP / tsParticles</text>
+    <text x="860" y="452" font-size="12" fill="#6E5C8E" text-anchor="middle">VeeValidate + zod</text>
+    <text x="860" y="472" font-size="12" fill="#6E5C8E" text-anchor="middle">12 屏 · 主轴下滑 + 子轴左滑</text>
+    <text x="860" y="494" font-size="12" fill="#1A1F36" text-anchor="middle">公网/admin 复用同一 SPA</text>
+
+    <!-- Hono API -->
+    <rect x="1030" y="360" width="260" height="160" rx="10" fill="#fff" stroke="#6E5C8E" stroke-width="2"/>
+    <text x="1160" y="390" font-size="15" font-weight="700" fill="#1A1F36" text-anchor="middle">Hono API  (Node 20)</text>
+    <text x="1160" y="412" font-size="12" fill="#6E5C8E" text-anchor="middle">PM2 守护 · 端口 3000</text>
+    <text x="1160" y="432" font-size="12" fill="#6E5C8E" text-anchor="middle">/api/health  /api/rsvp</text>
+    <text x="1160" y="452" font-size="12" fill="#6E5C8E" text-anchor="middle">/api/admin/login</text>
+    <text x="1160" y="472" font-size="12" fill="#6E5C8E" text-anchor="middle">/api/admin/rsvps</text>
+    <text x="1160" y="494" font-size="12" fill="#1A1F36" text-anchor="middle">/api/admin/export.csv</text>
+
+    <!-- SQLite -->
+    <rect x="880" y="580" width="260" height="120" rx="10" fill="#fff" stroke="#1A1F36" stroke-width="2"/>
+    <text x="1010" y="610" font-size="15" font-weight="700" fill="#1A1F36" text-anchor="middle">SQLite 单文件</text>
+    <text x="1010" y="632" font-size="12" fill="#6E5C8E" text-anchor="middle">/var/wedding/data.db</text>
+    <text x="1010" y="652" font-size="12" fill="#6E5C8E" text-anchor="middle">better-sqlite3 同步驱动</text>
+    <text x="1010" y="672" font-size="12" fill="#6E5C8E" text-anchor="middle">2 张表 · 每日 cron 备份</text>
+    <text x="1010" y="690" font-size="11" fill="#1A1F36" text-anchor="middle">无外部依赖 · 数据自己持有</text>
+
+    <!-- Hono → SQLite -->
+    <line x1="1160" y1="520" x2="1100" y2="580" stroke="#6E5C8E" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- SPA → Hono (内部) -->
+    <line x1="990" y1="440" x2="1030" y2="440" stroke="#F5A572" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="1010" y="432" font-size="10" fill="#F5A572" text-anchor="middle">/api</text>
+
+    <!-- Nginx → SPA & API -->
+    <line x1="860" y1="320" x2="860" y2="360" stroke="#6E5C8E" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="1160" y1="320" x2="1160" y2="360" stroke="#6E5C8E" stroke-width="2" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- 连接线: 宾客 → CDN → Nginx -->
+  <line x1="260" y1="180" x2="380" y2="240" stroke="#F5A572" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="318" y="200" font-size="11" fill="#F5A572">https</text>
+  <line x1="580" y1="260" x2="700" y2="260" stroke="#F5A572" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="640" y="252" font-size="11" fill="#F5A572">回源</text>
+
+  <!-- 后台 → Nginx 直连 (admin 路径) -->
+  <line x1="260" y1="440" x2="700" y2="280" stroke="#6E5C8E" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+  <text x="450" y="350" font-size="11" fill="#6E5C8E">/admin (建议直连或同 CDN)</text>
+
+  <!-- 开发者 → ECS SSH -->
+  <line x1="260" y1="700" x2="700" y2="700" stroke="#1A1F36" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="480" y="690" font-size="12" fill="#1A1F36">SSH 22 / Git pull / scp dist/</text>
+
+  <!-- 数据流向标注 -->
+  <g>
+    <rect x="80" y="800" width="1240" height="80" rx="8" fill="#FFF" stroke="#6E5C8E" stroke-width="1"/>
+    <text x="100" y="826" font-size="13" font-weight="700" fill="#1A1F36">数据流向说明</text>
+    <text x="100" y="848" font-size="12" fill="#6E5C8E">① 宾客 → (CDN) → Nginx 静态资源 (HTML/JS/CSS/图片) ② SPA 内 axios POST /api/rsvp → Nginx 反代 → Hono → SQLite</text>
+    <text x="100" y="868" font-size="12" fill="#6E5C8E">③ 后台 /admin 输密码 → Hono 校验 → 写 admin_sessions → 返回 token (httpOnly cookie) → 后续请求带 cookie ④ 开发者 ssh 到 ECS, git pull + pm2 reload</text>
+  </g>
+
+  <!-- 箭头 marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6E5C8E"/>
+    </marker>
+  </defs>
+</svg>
