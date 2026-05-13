@@ -1,0 +1,545 @@
+ops/pm2/ecosystem.config.cjs
+  9082d1f98c2a273a 1-61
+docs/赴约-页面流图.svg
+  9082d1f98c2a273a 1-163
+frontend/src/components/BgmPlayer.vue
+  9082d1f98c2a273a 1-146
+frontend/src/components/PhotoSwiper.vue
+  9082d1f98c2a273a 1-134
+ops/deploy/first-deploy.sh
+  9082d1f98c2a273a 1-168
+.gitignore
+  9082d1f98c2a273a 1-51
+backend/src/routes/admin.ts
+  9082d1f98c2a273a 1-111
+backend/tests/admin.test.ts
+  9082d1f98c2a273a 1-211
+docs/赴约-全景图.svg
+  9082d1f98c2a273a 1-127
+frontend/src/stores/rsvp.ts
+  9082d1f98c2a273a 1-51
+docs/赴约-RSVP时序图.svg
+  9082d1f98c2a273a 1-135
+backend/README.md
+  9082d1f98c2a273a 1-139
+backend/vitest.config.ts
+  9082d1f98c2a273a 1-17
+docs/赴约-任务拆解.md
+  9082d1f98c2a273a 1-167
+frontend/src/styles/tokens.scss
+  9082d1f98c2a273a 1-61
+backend/tests/rsvp.test.ts
+  9082d1f98c2a273a 1-190
+backend/src/middleware/cors.ts
+  9082d1f98c2a273a 1-36
+frontend/public/photos/outdoor-bw/README.md
+  9082d1f98c2a273a 1-26
+backend/src/db/connection.ts
+  9082d1f98c2a273a 1-56
+frontend/public/photos/main-gown/README.md
+  9082d1f98c2a273a 1-22
+frontend/src/pages/AdminPage.vue
+  9082d1f98c2a273a 1-269
+backend/src/schemas/rsvp.ts
+  9082d1f98c2a273a 1-87
+frontend/public/photos/outdoor-bw/_order.json
+  9082d1f98c2a273a 1-7
+ops/nginx/mynight.conf
+  9082d1f98c2a273a 1-142
+frontend/src/components/FormStepper.vue
+  9082d1f98c2a273a 1-376
+frontend/src/styles/fonts.scss
+  9082d1f98c2a273a 1-18
+frontend/src/styles/index.scss
+  9082d1f98c2a273a 1-134
+frontend/src/pages/HomePage.vue
+  9082d1f98c2a273a 1-117
+frontend/vite.config.ts
+  9082d1f98c2a273a 1-37
+docs/赴约-类图.svg
+  9082d1f98c2a273a 1-204
+frontend/src/api/rsvp.ts
+  9082d1f98c2a273a 1-36
+frontend/tsconfig.json
+  9082d1f98c2a273a 1-28
+frontend/src/stores/admin.ts
+  9082d1f98c2a273a 1-51
+ops/deploy/deploy.sh
+  9082d1f98c2a273a 1-159
+backend/src/utils/token.ts
+  9082d1f98c2a273a 1-9
+backend/package.json
+  9082d1f98c2a273a 1-28
+docs/赴约-架构方案.md
+  9082d1f98c2a273a 1-623
+frontend/public/photos/outdoor-bw/manifest.json
+  9082d1f98c2a273a 1-7
+frontend/src/env.d.ts
+  9082d1f98c2a273a 1-22
+backend/src/middleware/rateLimit.ts
+  9082d1f98c2a273a 1-77
+backend/src/utils/csv.ts
+  9082d1f98c2a273a 1-82
+frontend/.gitignore
+  9082d1f98c2a273a 1-18
+frontend/scripts/photos-manifest-plugin.ts
+  9082d1f98c2a273a 1-175
+frontend/src/api/types.ts
+  9082d1f98c2a273a 1-53
+frontend/src/components/TypeFadeIn.vue
+  9082d1f98c2a273a 1-54
+frontend/src/sections/PhotoSection.vue
+  9082d1f98c2a273a 1-111
+backend/src/db/migrate.ts
+  9082d1f98c2a273a 1-62
+frontend/public/audio/LICENSE.txt
+  9082d1f98c2a273a 1-27
+frontend/src/sections/ThanksSection.vue
+  9082d1f98c2a273a 1-122
+frontend/src/composables/useViewportHeight.ts
+  9082d1f98c2a273a 1-17
+frontend/index.html
+  9082d1f98c2a273a 1-24
+frontend/src/sections/RsvpSection.vue
+  9082d1f98c2a273a 1-110
+frontend/src/App.vue
+  9082d1f98c2a273a 1-17
+ops/deploy/.env.example
+  9082d1f98c2a273a 1-19
+backend/.gitignore
+  9082d1f98c2a273a 1-29
+ops/deploy/setup-ssl.sh
+  9082d1f98c2a273a 1-72
+frontend/src/main.ts
+  9082d1f98c2a273a 1-18
+backend/.env.example
+  9082d1f98c2a273a 1-4
+frontend/package.json
+  9082d1f98c2a273a 1-33
+ops/deploy/setup-server.sh
+  9082d1f98c2a273a 1-130
+frontend/src/sections/CoverSection.vue
+  9082d1f98c2a273a 1-167
+frontend/public/photos/french/manifest.json
+  9082d1f98c2a273a 1-6
+frontend/public/photos/french/README.md
+  9082d1f98c2a273a 1-22
+frontend/src/api/admin.ts
+  9082d1f98c2a273a 1-66
+frontend/src/components/ParticleBg.vue
+  9082d1f98c2a273a 1-102
+frontend/src/data/stories.ts
+  9082d1f98c2a273a 1-74
+backend/src/routes/rsvp.ts
+  9082d1f98c2a273a 1-49
+docs/赴约-后台登录时序图.svg
+  9082d1f98c2a273a 1-124
+ops/deploy/.gitignore
+  9082d1f98c2a273a 1-8
+docs/赴约-ER图.svg
+  9082d1f98c2a273a 1-139
+backend/src/routes/health.ts
+  9082d1f98c2a273a 1-9
+backend/tests/helpers.ts
+  9082d1f98c2a273a 1-77
+docs/竞品调研.md
+  9082d1f98c2a273a 1-247
+frontend/public/photos/main-gown/manifest.json
+  9082d1f98c2a273a 1-7
+frontend/src/api/client.ts
+  9082d1f98c2a273a 1-38
+frontend/src/sections/StorySection.vue
+  9082d1f98c2a273a 1-176
+backend/tsconfig.json
+  9082d1f98c2a273a 1-26
+backend/src/middleware/auth.ts
+  9082d1f98c2a273a 1-33
+frontend/src/components/CountdownTimer.vue
+  9082d1f98c2a273a 1-116
+frontend/src/sections/VenueSection.vue
+  9082d1f98c2a273a 1-529
+frontend/src/data/photos.ts
+  9082d1f98c2a273a 1-41
+frontend/README.md
+  9082d1f98c2a273a 1-106
+frontend/src/router/index.ts
+  9082d1f98c2a273a 1-22
+backend/src/db/schema.sql
+  9082d1f98c2a273a 1-22
+backend/src/server.ts
+  9082d1f98c2a273a 1-95
+ops/README.md
+  9082d1f98c2a273a 1-245
+ops/nginx/install.sh
+  9082d1f98c2a273a 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.7",
+  "base_commit_sha": "2b3a27732e91a8ba52a37beda5e95781b10bb05b",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 8277,
+      "total_deletions": 0,
+      "accepted_lines": 8277,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "backend/src/server.ts": {
+          "additions": 95,
+          "accepted_lines": 95
+        },
+        "backend/src/routes/health.ts": {
+          "additions": 9,
+          "accepted_lines": 9
+        },
+        "frontend/src/sections/CoverSection.vue": {
+          "additions": 167,
+          "accepted_lines": 167
+        },
+        "ops/deploy/.gitignore": {
+          "additions": 8,
+          "accepted_lines": 8
+        },
+        "frontend/src/api/admin.ts": {
+          "additions": 66,
+          "accepted_lines": 66
+        },
+        "frontend/src/main.ts": {
+          "additions": 18,
+          "accepted_lines": 18
+        },
+        "backend/src/db/schema.sql": {
+          "additions": 22,
+          "accepted_lines": 22
+        },
+        "frontend/src/composables/useViewportHeight.ts": {
+          "additions": 17,
+          "accepted_lines": 17
+        },
+        "docs/赴约-页面流图.svg": {
+          "additions": 163,
+          "accepted_lines": 163
+        },
+        "backend/README.md": {
+          "additions": 139,
+          "accepted_lines": 139
+        },
+        "backend/tests/helpers.ts": {
+          "additions": 77,
+          "accepted_lines": 77
+        },
+        "frontend/src/stores/rsvp.ts": {
+          "additions": 51,
+          "accepted_lines": 51
+        },
+        "frontend/src/data/stories.ts": {
+          "additions": 74,
+          "accepted_lines": 74
+        },
+        "ops/deploy/first-deploy.sh": {
+          "additions": 168,
+          "accepted_lines": 168
+        },
+        "backend/.env.example": {
+          "additions": 4,
+          "accepted_lines": 4
+        },
+        "frontend/.gitignore": {
+          "additions": 18,
+          "accepted_lines": 18
+        },
+        "backend/src/routes/rsvp.ts": {
+          "additions": 49,
+          "accepted_lines": 49
+        },
+        "backend/src/middleware/cors.ts": {
+          "additions": 36,
+          "accepted_lines": 36
+        },
+        "ops/pm2/ecosystem.config.cjs": {
+          "additions": 61,
+          "accepted_lines": 61
+        },
+        "frontend/index.html": {
+          "additions": 24,
+          "accepted_lines": 24
+        },
+        "ops/deploy/deploy.sh": {
+          "additions": 159,
+          "accepted_lines": 159
+        },
+        "frontend/public/photos/main-gown/manifest.json": {
+          "additions": 7,
+          "accepted_lines": 7
+        },
+        "frontend/public/photos/outdoor-bw/manifest.json": {
+          "additions": 7,
+          "accepted_lines": 7
+        },
+        "frontend/public/photos/french/README.md": {
+          "additions": 22,
+          "accepted_lines": 22
+        },
+        "docs/赴约-ER图.svg": {
+          "additions": 139,
+          "accepted_lines": 139
+        },
+        "ops/deploy/setup-server.sh": {
+          "additions": 130,
+          "accepted_lines": 130
+        },
+        "frontend/src/App.vue": {
+          "additions": 17,
+          "accepted_lines": 17
+        },
+        "ops/deploy/setup-ssl.sh": {
+          "additions": 72,
+          "accepted_lines": 72
+        },
+        "frontend/src/components/BgmPlayer.vue": {
+          "additions": 146,
+          "accepted_lines": 146
+        },
+        ".gitignore": {
+          "additions": 51,
+          "accepted_lines": 51
+        },
+        "frontend/package.json": {
+          "additions": 33,
+          "accepted_lines": 33
+        },
+        "frontend/src/styles/fonts.scss": {
+          "additions": 18,
+          "accepted_lines": 18
+        },
+        "frontend/public/audio/LICENSE.txt": {
+          "additions": 27,
+          "accepted_lines": 27
+        },
+        "frontend/src/router/index.ts": {
+          "additions": 22,
+          "accepted_lines": 22
+        },
+        "docs/赴约-RSVP时序图.svg": {
+          "additions": 135,
+          "accepted_lines": 135
+        },
+        "ops/nginx/install.sh": {
+          "additions": 51,
+          "accepted_lines": 51
+        },
+        "frontend/src/sections/PhotoSection.vue": {
+          "additions": 111,
+          "accepted_lines": 111
+        },
+        "frontend/src/pages/HomePage.vue": {
+          "additions": 117,
+          "accepted_lines": 117
+        },
+        "backend/tests/admin.test.ts": {
+          "additions": 211,
+          "accepted_lines": 211
+        },
+        "backend/tsconfig.json": {
+          "additions": 26,
+          "accepted_lines": 26
+        },
+        "backend/src/db/migrate.ts": {
+          "additions": 62,
+          "accepted_lines": 62
+        },
+        "frontend/src/sections/VenueSection.vue": {
+          "additions": 529,
+          "accepted_lines": 529
+        },
+        "frontend/src/api/types.ts": {
+          "additions": 53,
+          "accepted_lines": 53
+        },
+        "backend/src/utils/csv.ts": {
+          "additions": 82,
+          "accepted_lines": 82
+        },
+        "frontend/scripts/photos-manifest-plugin.ts": {
+          "additions": 175,
+          "accepted_lines": 175
+        },
+        "frontend/public/photos/main-gown/README.md": {
+          "additions": 22,
+          "accepted_lines": 22
+        },
+        "backend/src/middleware/rateLimit.ts": {
+          "additions": 77,
+          "accepted_lines": 77
+        },
+        "frontend/src/components/CountdownTimer.vue": {
+          "additions": 116,
+          "accepted_lines": 116
+        },
+        "frontend/README.md": {
+          "additions": 106,
+          "accepted_lines": 106
+        },
+        "ops/README.md": {
+          "additions": 245,
+          "accepted_lines": 245
+        },
+        "frontend/src/data/photos.ts": {
+          "additions": 41,
+          "accepted_lines": 41
+        },
+        "frontend/src/sections/ThanksSection.vue": {
+          "additions": 122,
+          "accepted_lines": 122
+        },
+        "backend/.gitignore": {
+          "additions": 29,
+          "accepted_lines": 29
+        },
+        "frontend/public/photos/french/manifest.json": {
+          "additions": 6,
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/outdoor-bw/_order.json": {
+          "additions": 7,
+          "accepted_lines": 7
+        },
+        "frontend/src/stores/admin.ts": {
+          "additions": 51,
+          "accepted_lines": 51
+        },
+        "frontend/src/env.d.ts": {
+          "additions": 22,
+          "accepted_lines": 22
+        },
+        "frontend/tsconfig.json": {
+          "additions": 28,
+          "accepted_lines": 28
+        },
+        "ops/nginx/mynight.conf": {
+          "additions": 142,
+          "accepted_lines": 142
+        },
+        "frontend/src/components/FormStepper.vue": {
+          "additions": 376,
+          "accepted_lines": 376
+        },
+        "frontend/src/sections/RsvpSection.vue": {
+          "additions": 110,
+          "accepted_lines": 110
+        },
+        "frontend/src/styles/tokens.scss": {
+          "additions": 61,
+          "accepted_lines": 61
+        },
+        "backend/src/db/connection.ts": {
+          "additions": 56,
+          "accepted_lines": 56
+        },
+        "frontend/public/photos/outdoor-bw/README.md": {
+          "additions": 26,
+          "accepted_lines": 26
+        },
+        "frontend/vite.config.ts": {
+          "additions": 37,
+          "accepted_lines": 37
+        },
+        "docs/赴约-架构方案.md": {
+          "additions": 623,
+          "accepted_lines": 623
+        },
+        "backend/vitest.config.ts": {
+          "additions": 17,
+          "accepted_lines": 17
+        },
+        "docs/赴约-类图.svg": {
+          "additions": 204,
+          "accepted_lines": 204
+        },
+        "backend/package.json": {
+          "additions": 28,
+          "accepted_lines": 28
+        },
+        "docs/赴约-全景图.svg": {
+          "additions": 127,
+          "accepted_lines": 127
+        },
+        "frontend/src/styles/index.scss": {
+          "additions": 134,
+          "accepted_lines": 134
+        },
+        "frontend/src/api/client.ts": {
+          "additions": 38,
+          "accepted_lines": 38
+        },
+        "frontend/src/components/PhotoSwiper.vue": {
+          "additions": 134,
+          "accepted_lines": 134
+        },
+        "docs/赴约-任务拆解.md": {
+          "additions": 167,
+          "accepted_lines": 167
+        },
+        "frontend/src/pages/AdminPage.vue": {
+          "additions": 269,
+          "accepted_lines": 269
+        },
+        "backend/src/routes/admin.ts": {
+          "additions": 111,
+          "accepted_lines": 111
+        },
+        "ops/deploy/.env.example": {
+          "additions": 19,
+          "accepted_lines": 19
+        },
+        "docs/赴约-后台登录时序图.svg": {
+          "additions": 124,
+          "accepted_lines": 124
+        },
+        "backend/src/schemas/rsvp.ts": {
+          "additions": 87,
+          "accepted_lines": 87
+        },
+        "frontend/src/components/TypeFadeIn.vue": {
+          "additions": 54,
+          "accepted_lines": 54
+        },
+        "frontend/src/api/rsvp.ts": {
+          "additions": 36,
+          "accepted_lines": 36
+        },
+        "docs/竞品调研.md": {
+          "additions": 247,
+          "accepted_lines": 247
+        },
+        "backend/src/middleware/auth.ts": {
+          "additions": 33,
+          "accepted_lines": 33
+        },
+        "frontend/src/sections/StorySection.vue": {
+          "additions": 176,
+          "accepted_lines": 176
+        },
+        "backend/src/utils/token.ts": {
+          "additions": 9,
+          "accepted_lines": 9
+        },
+        "backend/tests/rsvp.test.ts": {
+          "additions": 190,
+          "accepted_lines": 190
+        },
+        "frontend/src/components/ParticleBg.vue": {
+          "additions": 102,
+          "accepted_lines": 102
+        }
+      }
+    }
+  }
+}
