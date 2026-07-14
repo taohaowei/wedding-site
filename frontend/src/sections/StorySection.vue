@@ -25,12 +25,12 @@
     <!-- 决定屏(故事⑤):左女右男的双图 -->
     <div v-else-if="story.id === 'decision'" class="illust illust-pair" ref="illustEl">
       <div class="pair-card pair-left">
-        <img src="/photos/_proposal/%E8%A2%AB%E6%B1%82%E5%A9%9A.jpg" alt="她,在那一刻接受了" @error="onProposalImgError($event, 'left')" />
+        <img :src="proposalLeftSrc" alt="她,在那一刻接受了" @error="onProposalImgError($event, 'left')" />
         <span v-if="!proposalLeftFailed" class="pair-tag">她,在那一刻</span>
         <span v-else class="pair-tag pair-tag-placeholder">💍 请放入求婚照</span>
       </div>
       <div class="pair-card pair-right">
-        <img src="/photos/_proposal/%E5%8D%95%E8%86%9D%E8%B7%AA%E5%BC%82%E5%9C%B0%E6%B1%82%E5%A9%9A.jpg" alt="他,跪下问出口" @error="onProposalImgError($event, 'right')" />
+        <img :src="proposalRightSrc" alt="他,跪下问出口" @error="onProposalImgError($event, 'right')" />
         <span v-if="!proposalRightFailed" class="pair-tag">他,问出了口</span>
         <span v-else class="pair-tag pair-tag-placeholder">💍 请放入求婚照</span>
       </div>
@@ -75,6 +75,10 @@ const imgFailed = ref(false)
 const engagementPhotos = ref<string[]>([])
 const proposalLeftFailed = ref(false)
 const proposalRightFailed = ref(false)
+
+// 使用动态绑定避免 Vite 编译时尝试解析不存在的照片文件
+const proposalLeftSrc = '/photos/_proposal/被求婚.jpg'
+const proposalRightSrc = '/photos/_proposal/单膝跪异地求婚.jpg'
 
 function onProposalImgError(_e: Event, side: 'left' | 'right') {
   if (side === 'left') proposalLeftFailed.value = true
