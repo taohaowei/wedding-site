@@ -11,7 +11,7 @@
   <img src="readme-screenshots/m05-thanks.png" width="200" alt="感谢页" />
 </p>
 
-> 📱 移动端优先 · 全屏滑页 · 在线演示：[mynight.top](https://mynight.top) · [GitHub Pages](https://taohaowei.github.io/wedding-site/)
+> 📱 移动端优先 · 全屏滑页 · 在线演示：[GitHub Pages](https://taohaowei.github.io/wedding-site/)
 
 ## 技术栈
 

@@ -42,20 +42,19 @@ jobs:
         run: npm ci
 
       - name: Determine BASE_URL
-        id: base_url
         run: |
-          # 项目 pages: <user>.github.io/<repo>/ -> BASE_URL=/<repo>/
-          # 用户 pages: <user>.github.io -> BASE_URL=/
-          if [[ "${{ github.event.repository.name }}" == "${{ github.repository_owner }}.github.io" ]]; then
-            echo "value=/" >> $GITHUB_OUTPUT
+          # 如果通过 Actions Variables 配置了 BASE_URL，优先使用
+          if [[ -n "${{ vars.BASE_URL }}" ]]; then
+            echo "使用 vars.BASE_URL: ${{ vars.BASE_URL }}"
+            echo "BASE_URL=${{ vars.BASE_URL }}" >> $GITHUB_ENV
+          elif [[ "${{ github.event.repository.name }}" == "${{ github.repository_owner }}.github.io" ]]; then
+            echo "BASE_URL=/" >> $GITHUB_ENV
           else
-            echo "value=/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
+            echo "BASE_URL=/${{ github.event.repository.name }}/" >> $GITHUB_ENV
           fi
 
       - name: Build
         run: npm run build
-        env:
-          BASE_URL: ${{ vars.BASE_URL || steps.base_url.outputs.value }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
