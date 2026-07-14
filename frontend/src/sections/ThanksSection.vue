@@ -11,8 +11,8 @@
       </h2>
       <p class="wish">愿你也能,赴一场不期而遇的约。</p>
 
-      <p class="sign serif-en">— Tao Haowei &amp; Liu Yuqing —</p>
-      <p class="signature-zh">陶 浩 伟 &amp; 刘 雨 晴</p>
+      <p class="sign serif-en">— Zhang San &amp; Xiao Mei —</p>
+      <p class="signature-zh">张 三 &amp; 小 美</p>
       <p class="date">6 . 13 · 等 你 ❤</p>
 
       <button class="restart" @click="$emit('restart')">↻ 再 · 来 · 一 · 遍</button>
