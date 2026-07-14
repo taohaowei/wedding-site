@@ -4,7 +4,7 @@
     <div class="topbar"></div>
 
     <!-- BGM(同邀请函) -->
-    <BgmPlayer src="/audio/bgm.mp3" />
+    <BgmPlayer :src="p('/audio/bgm.mp3')" />
 
     <!-- 返回按钮(左上,避开右上 BGM 按钮) -->
     <RouterLink to="/" class="back-btn" aria-label="回到邀请函首页">
@@ -278,6 +278,7 @@
 import { onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import BgmPlayer from '@/components/BgmPlayer.vue'
+import { p } from '@/utils/path'
 
 onMounted(() => {
   document.title = '一日攻略 · 张三 ✕ 小美邀请函'

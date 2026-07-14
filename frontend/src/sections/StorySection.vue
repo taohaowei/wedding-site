@@ -57,6 +57,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import { p } from '../utils/path'
 import { gsap } from 'gsap'
 import type { StoryItem } from '@/data/stories'
 import OneKmAnimation from '@/components/OneKmAnimation.vue'
@@ -77,8 +78,8 @@ const proposalLeftFailed = ref(false)
 const proposalRightFailed = ref(false)
 
 // 使用动态绑定避免 Vite 编译时尝试解析不存在的照片文件
-const proposalLeftSrc = '/photos/_proposal/被求婚.jpg'
-const proposalRightSrc = '/photos/_proposal/单膝跪异地求婚.jpg'
+const proposalLeftSrc = p('/photos/_proposal/被求婚.jpg')
+const proposalRightSrc = p('/photos/_proposal/单膝跪异地求婚.jpg')
 
 function onProposalImgError(_e: Event, side: 'left' | 'right') {
   if (side === 'left') proposalLeftFailed.value = true
@@ -89,18 +90,18 @@ function onProposalImgError(_e: Event, side: 'left' | 'right') {
 const bgPhotoStyle = computed(() => {
   if (!props.story.bgPhoto) return {}
   return {
-    backgroundImage: `url('${encodeURI(props.story.bgPhoto)}')`
+    backgroundImage: `url('${encodeURI(p(props.story.bgPhoto))}')`
   }
 })
 
 // 订婚屏:fetch manifest.json 拿照片列表
 async function loadEngagementPhotos() {
   try {
-    const res = await fetch('/photos/engagement/manifest.json', { cache: 'no-cache' })
+    const res = await fetch(p('/photos/engagement/manifest.json'), { cache: 'no-cache' })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const list = (await res.json()) as string[]
     if (Array.isArray(list)) {
-      engagementPhotos.value = list.map(name => `/photos/engagement/${encodeURIComponent(name)}`)
+      engagementPhotos.value = list.map(name => p(`/photos/engagement/${encodeURIComponent(name)}`))
     }
   } catch (e) {
     console.warn('[StorySection] engagement manifest 加载失败:', e)

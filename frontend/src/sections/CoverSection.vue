@@ -36,6 +36,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { p } from '../utils/path'
 import ParticleBg from '@/components/ParticleBg.vue'
 import CountdownTimer from '@/components/CountdownTimer.vue'
 
@@ -52,7 +53,7 @@ const guestName = computed(() => {
 
 // 合照背景(照片不存在时回退到暖色调纯色)
 const bgStyle = computed(() => ({
-  backgroundImage: `url('/photos/main-gown/合照-展示.jpg')`,
+  backgroundImage: `url('${p('/photos/main-gown/合照-展示.jpg')}')`,
   backgroundColor: '#FAF6F0'
 }))
 </script>

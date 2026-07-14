@@ -16,6 +16,7 @@
 import { ref, watch, onMounted } from 'vue'
 import type { PhotoSet } from '@/data/photos'
 import PhotoSwiper from '@/components/PhotoSwiper.vue'
+import { p } from '@/utils/path'
 
 const props = defineProps<{ set: PhotoSet; active?: boolean }>()
 
@@ -28,11 +29,11 @@ const photos = ref<string[]>([])
 
 async function loadManifest(setId: string) {
   try {
-    const res = await fetch(`/photos/${setId}/manifest.json`, { cache: 'no-cache' })
+    const res = await fetch(p(`/photos/${setId}/manifest.json`), { cache: 'no-cache' })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const list = (await res.json()) as string[]
     if (!Array.isArray(list)) throw new Error('manifest 不是数组')
-    photos.value = list.map((name) => `/photos/${setId}/${encodeURIComponent(name)}`)
+    photos.value = list.map((name) => p(`/photos/${setId}/${encodeURIComponent(name)}`))
   } catch (e) {
     console.warn(`[PhotoSection] 加载 ${setId} manifest 失败,使用占位:`, e)
     photos.value = []

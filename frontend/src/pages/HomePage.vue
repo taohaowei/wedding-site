@@ -1,6 +1,6 @@
 <template>
   <div class="home-root">
-    <BgmPlayer src="/audio/bgm.mp3" />
+    <BgmPlayer :src="p('/audio/bgm.mp3')" />
 
     <!-- 顶部进度条 -->
     <div class="progress-bar" :style="{ width: progress + '%' }"></div>
@@ -89,6 +89,7 @@ import { useAutoplay } from '@/composables/useAutoplay'
 import { probeBackend } from '@/api/client'
 
 import BgmPlayer from '@/components/BgmPlayer.vue'
+import { p } from '@/utils/path'
 import CoverSection from '@/sections/CoverSection.vue'
 import StorySection from '@/sections/StorySection.vue'
 import PhotoSection from '@/sections/PhotoSection.vue'
