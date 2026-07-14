@@ -36,7 +36,7 @@
       </div>
     </div>
     <div v-else class="illust" ref="illustEl">
-      <img v-if="!imgFailed" :src="story.illustration" :alt="story.title" @error="imgFailed = true" />
+      <img v-if="!imgFailed" :src="p(story.illustration)" :alt="story.title" @error="imgFailed = true" />
       <div v-else class="illust-placeholder">
         <span class="ph-tag">{{ story.badge }}</span>
         <span class="ph-text">插画占位 · {{ story.title }}</span>
