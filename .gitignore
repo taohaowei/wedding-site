@@ -57,4 +57,12 @@ tmp/
 # 设计稿截图（不纳入仓库）
 screenshot-stage-a.png
 wedding-site_*.png
+readme-screenshots/*-cover.png  # 桌面版截图(手机版保留)
+d17d2796cb47b5e6c3b6d761da15179f.jpg
 frontend/scripts/screenshots-rsvp/
+
+# 设计文档中的截图
+docs/screenshots-one-km/
+docs/距离动画-调研.md
+docs/multi-device-testing.md
+docs/responsive-best-practice.md
