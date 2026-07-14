@@ -1,0 +1,103 @@
+frontend/src/components/PhotoSwiper.vue
+  a0214483a01657e1 45-51
+frontend/scripts/photos-manifest-plugin.ts
+  a0214483a01657e1 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "7ae905cd8fd77e277ac32cec99784ad648cdb811",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 17,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/engagement/manifest.json": {
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/main-gown/_order.json": {
+          "accepted_lines": 5
+        },
+        "frontend/public/photos/engagement/_order.json": {
+          "accepted_lines": 6
+        }
+      }
+    },
+    "a0214483a01657e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e61bb103-f3d2-409a-a7ea-c29cbfcd5b57",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 7060,
+      "total_deletions": 1353,
+      "accepted_lines": 7060,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/french/示例照片.jpg": {
+          "deletions": 673
+        },
+        "frontend/public/photos/outdoor-bw/示例照片.jpg": {
+          "deletions": 673
+        },
+        "frontend/public/photos/outdoor-bw/光影对视.jpg": {
+          "additions": 799,
+          "accepted_lines": 799
+        },
+        "frontend/src/components/PhotoSwiper.vue": {
+          "additions": 7,
+          "deletions": 6,
+          "accepted_lines": 7
+        },
+        "frontend/public/photos/french/合照，男看女.jpg": {
+          "additions": 744,
+          "accepted_lines": 744
+        },
+        "frontend/public/photos/outdoor-bw/前后走.jpg": {
+          "additions": 685,
+          "accepted_lines": 685
+        },
+        "frontend/public/photos/outdoor-bw/光影对视（绝美），电影感.jpg": {
+          "additions": 764,
+          "accepted_lines": 764
+        },
+        "frontend/public/photos/french/女单，露背.jpg": {
+          "additions": 658,
+          "accepted_lines": 658
+        },
+        "frontend/public/photos/french/女单，温婉.jpg": {
+          "additions": 667,
+          "accepted_lines": 667
+        },
+        "frontend/scripts/photos-manifest-plugin.ts": {
+          "additions": 1,
+          "deletions": 1,
+          "accepted_lines": 1
+        },
+        "frontend/public/photos/outdoor-bw/搂肩合照.jpg": {
+          "additions": 820,
+          "accepted_lines": 820
+        },
+        "frontend/public/photos/french/合照，正式.jpg": {
+          "additions": 1033,
+          "accepted_lines": 1033
+        },
+        "frontend/public/photos/outdoor-bw/霸总强吻.jpg": {
+          "additions": 882,
+          "accepted_lines": 882
+        }
+      }
+    }
+  }
+}
