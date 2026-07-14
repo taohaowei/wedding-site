@@ -1,0 +1,53 @@
+README.md
+  a0214483a01657e1 55-88
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "093babe32db0217cb51b7d7967ede12c7bb39a50",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 17,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/engagement/manifest.json": {
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/engagement/_order.json": {
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/main-gown/_order.json": {
+          "accepted_lines": 5
+        }
+      }
+    },
+    "a0214483a01657e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e61bb103-f3d2-409a-a7ea-c29cbfcd5b57",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 34,
+      "total_deletions": 0,
+      "accepted_lines": 34,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "README.md": {
+          "additions": 34,
+          "accepted_lines": 34
+        }
+      }
+    }
+  }
+}
