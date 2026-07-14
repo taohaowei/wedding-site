@@ -1,0 +1,86 @@
+docs/multi-device-testing.md
+  9082d1f98c2a273a 1-207
+docs/responsive-best-practice.md
+  9082d1f98c2a273a 1-345
+docs/距离动画-调研.md
+  9082d1f98c2a273a 1-68
+frontend/vite.config.ts
+  a0214483a01657e1 7-8
+README.md
+  a0214483a01657e1 14,42-54
+frontend/scripts/screenshots-rsvp/capture.py
+  9082d1f98c2a273a 1-174
+.github/workflows/deploy-pages.yml
+  a0214483a01657e1 1-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "61a529794ffee5a9c2ef5dd9916330bd66099995",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 811,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/engagement/_order.json": {
+          "accepted_lines": 6
+        },
+        "docs/responsive-best-practice.md": {
+          "accepted_lines": 345
+        },
+        "frontend/scripts/screenshots-rsvp/capture.py": {
+          "accepted_lines": 174
+        },
+        "frontend/public/photos/engagement/manifest.json": {
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/main-gown/_order.json": {
+          "accepted_lines": 5
+        },
+        "docs/multi-device-testing.md": {
+          "accepted_lines": 207
+        },
+        "docs/距离动画-调研.md": {
+          "accepted_lines": 68
+        }
+      }
+    },
+    "a0214483a01657e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e61bb103-f3d2-409a-a7ea-c29cbfcd5b57",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 81,
+      "total_deletions": 1,
+      "accepted_lines": 81,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        ".github/workflows/deploy-pages.yml": {
+          "additions": 65,
+          "accepted_lines": 65
+        },
+        "README.md": {
+          "additions": 14,
+          "deletions": 1,
+          "accepted_lines": 14
+        },
+        "frontend/vite.config.ts": {
+          "additions": 2,
+          "accepted_lines": 2
+        }
+      }
+    }
+  }
+}
