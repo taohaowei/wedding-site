@@ -50,9 +50,10 @@ const guestName = computed(() => {
   } catch { return '' }
 })
 
-// 合照背景
+// 合照背景(照片不存在时回退到暖色调纯色)
 const bgStyle = computed(() => ({
-  backgroundImage: `url('/photos/main-gown/合照-展示.jpg')`
+  backgroundImage: `url('/photos/main-gown/合照-展示.jpg')`,
+  backgroundColor: '#FAF6F0'
 }))
 </script>
 

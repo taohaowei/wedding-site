@@ -16,17 +16,23 @@
     </div>
     <!-- 订婚屏:横滑 PhotoSwiper(同婚纱照风格) -->
     <div v-else-if="story.id === 'engagement'" class="illust illust-photoset" ref="illustEl">
-      <PhotoSwiper :photos="engagementPhotos" theme="light" :fallback-count="4" />
+      <PhotoSwiper v-if="engagementPhotos.length > 0" :photos="engagementPhotos" theme="light" :fallback-count="4" />
+      <div v-else class="illust-placeholder" style="height:260px">
+        <span class="ph-tag">{{ story.badge }}</span>
+        <span class="ph-text">请放入订婚照 📸</span>
+      </div>
     </div>
-    <!-- 决定屏(故事⑤):左女右男的求婚双图(从 _proposal/ 隐藏目录引用) -->
+    <!-- 决定屏(故事⑤):左女右男的双图 -->
     <div v-else-if="story.id === 'decision'" class="illust illust-pair" ref="illustEl">
       <div class="pair-card pair-left">
-        <img src="/photos/_proposal/%E8%A2%AB%E6%B1%82%E5%A9%9A.jpg" alt="她,在那一刻接受了" />
-        <span class="pair-tag">她,在那一刻</span>
+        <img src="/photos/_proposal/%E8%A2%AB%E6%B1%82%E5%A9%9A.jpg" alt="她,在那一刻接受了" @error="onProposalImgError($event, 'left')" />
+        <span v-if="!proposalLeftFailed" class="pair-tag">她,在那一刻</span>
+        <span v-else class="pair-tag pair-tag-placeholder">💍 请放入求婚照</span>
       </div>
       <div class="pair-card pair-right">
-        <img src="/photos/_proposal/%E5%8D%95%E8%86%9D%E8%B7%AA%E5%BC%82%E5%9C%B0%E6%B1%82%E5%A9%9A.jpg" alt="他,跪下问出口" />
-        <span class="pair-tag">他,问出了口</span>
+        <img src="/photos/_proposal/%E5%8D%95%E8%86%9D%E8%B7%AA%E5%BC%82%E5%9C%B0%E6%B1%82%E5%A9%9A.jpg" alt="他,跪下问出口" @error="onProposalImgError($event, 'right')" />
+        <span v-if="!proposalRightFailed" class="pair-tag">他,问出了口</span>
+        <span v-else class="pair-tag pair-tag-placeholder">💍 请放入求婚照</span>
       </div>
     </div>
     <div v-else class="illust" ref="illustEl">
@@ -67,6 +73,13 @@ const subtitleEl = ref<HTMLElement | null>(null)
 const pEls = ref<HTMLElement[]>([])
 const imgFailed = ref(false)
 const engagementPhotos = ref<string[]>([])
+const proposalLeftFailed = ref(false)
+const proposalRightFailed = ref(false)
+
+function onProposalImgError(_e: Event, side: 'left' | 'right') {
+  if (side === 'left') proposalLeftFailed.value = true
+  else proposalRightFailed.value = true
+}
 
 // 处理含中文/括号的图片路径,使用 encodeURI 避免空格/括号导致 URL 异常
 const bgPhotoStyle = computed(() => {
