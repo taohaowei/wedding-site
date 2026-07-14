@@ -52,3 +52,9 @@ frontend/public/photos/
 # 临时
 tmp/
 .tmp/
+.tmp-screenshots/
+
+# 设计稿截图（不纳入仓库）
+screenshot-stage-a.png
+wedding-site_*.png
+frontend/scripts/screenshots-rsvp/

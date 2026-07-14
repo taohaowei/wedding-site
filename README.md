@@ -11,7 +11,7 @@
   <img src="readme-screenshots/m05-thanks.png" width="200" alt="感谢页" />
 </p>
 
-> 📱 移动端优先 · 全屏滑页 · 在线演示：[mynight.top](https://mynight.top)
+> 📱 移动端优先 · 全屏滑页 · 在线演示：[mynight.top](https://mynight.top) · [GitHub Pages](https://你的用户名.github.io/你的仓库名/)
 
 ## 技术栈
 
@@ -38,6 +38,19 @@ npm run dev
 ```
 
 打开 `http://localhost:5173` 预览。
+
+## 在线演示（GitHub Pages）
+
+前端纯静态部分可以直接部署到 GitHub Pages：
+
+1. 推送代码到 GitHub 仓库
+2. 仓库 Settings → Pages → **Source 选 "GitHub Actions"**
+3. 如果仓库名不是 `<你的用户名>.github.io`，在 Settings → Actions → Variables 新建 `BASE_URL=/仓库名/`
+4. 推送 `main` 分支，Actions 会自动构建部署
+
+部署后访问 `https://<你的用户名>.github.io/<仓库名>/`。
+
+> ⚠️ 注意：GitHub Pages 不支持后端，RSVP 提交和管理后台会以 **mock 模式** 运行（数据不持久化），适合作为视觉预览。如需完整功能请部署到自己的服务器。
 
 ## 项目结构
 
