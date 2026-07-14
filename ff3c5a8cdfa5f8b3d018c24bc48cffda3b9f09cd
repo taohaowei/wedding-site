@@ -1,0 +1,104 @@
+frontend/src/utils/path.ts
+  a0214483a01657e1 1-10
+frontend/src/sections/StorySection.vue
+  a0214483a01657e1 60,81-82,93,100,104
+frontend/src/pages/GuidePage.vue
+  a0214483a01657e1 7,281
+frontend/src/pages/HomePage.vue
+  a0214483a01657e1 3,92
+frontend/src/sections/PhotoSection.vue
+  a0214483a01657e1 19,32,36
+frontend/src/sections/CoverSection.vue
+  a0214483a01657e1 39,56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "ff3c5a8cdfa5f8b3d018c24bc48cffda3b9f09cd",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 17,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/main-gown/_order.json": {
+          "accepted_lines": 5
+        },
+        "frontend/public/photos/engagement/manifest.json": {
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/engagement/_order.json": {
+          "accepted_lines": 6
+        }
+      }
+    },
+    "a0214483a01657e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e61bb103-f3d2-409a-a7ea-c29cbfcd5b57",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 12147,
+      "total_deletions": 10,
+      "accepted_lines": 12147,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/src/utils/path.ts": {
+          "additions": 10,
+          "accepted_lines": 10
+        },
+        "frontend/src/sections/CoverSection.vue": {
+          "additions": 2,
+          "deletions": 1,
+          "accepted_lines": 2
+        },
+        "frontend/src/sections/StorySection.vue": {
+          "additions": 6,
+          "deletions": 5,
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/_proposal/单膝跪异地求婚.jpg": {
+          "additions": 4201,
+          "accepted_lines": 4201
+        },
+        "frontend/public/photos/_proposal/被求婚.jpg": {
+          "additions": 4722,
+          "accepted_lines": 4722
+        },
+        "readme-screenshots/verify-deploy.png": {
+          "additions": 2526,
+          "accepted_lines": 2526
+        },
+        "frontend/src/sections/PhotoSection.vue": {
+          "additions": 3,
+          "deletions": 2,
+          "accepted_lines": 3
+        },
+        "frontend/public/photos/main-gown/合照-展示.jpg": {
+          "additions": 673,
+          "accepted_lines": 673
+        },
+        "frontend/src/pages/GuidePage.vue": {
+          "additions": 2,
+          "deletions": 1,
+          "accepted_lines": 2
+        },
+        "frontend/src/pages/HomePage.vue": {
+          "additions": 2,
+          "deletions": 1,
+          "accepted_lines": 2
+        }
+      }
+    }
+  }
+}
