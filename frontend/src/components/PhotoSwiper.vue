@@ -42,12 +42,13 @@ const props = defineProps<{
 const modules = [Pagination, Mousewheel]
 
 const slides = computed(() => {
-  if (props.photos && props.photos.length > 0) {
-    return props.photos.map(src => ({ src }))
-  }
-  // fallback 占位卡
-  const n = props.fallbackCount ?? 5
-  return Array.from({ length: n }, () => ({ src: '' }))
+  // 真实照片
+  const real = (props.photos ?? []).map(src => ({ src }))
+  // 目标张数:不足则用占位卡补足,让左滑始终能看到"还能放更多照片"的参考
+  const target = props.fallbackCount ?? 5
+  if (real.length >= target) return real
+  const pad = Array.from({ length: target - real.length }, () => ({ src: '' }))
+  return [...real, ...pad]
 })
 </script>
 

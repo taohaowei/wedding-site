@@ -6,7 +6,7 @@ import type { Plugin, ViteDevServer } from 'vite'
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif'])
 
 // 默认要扫描的 set 子目录(在 public/photos/ 下)
-const DEFAULT_SETS = ['main-gown', 'french', 'outdoor-bw']
+const DEFAULT_SETS = ['main-gown', 'french', 'outdoor-bw', 'engagement']
 
 interface PluginOptions {
   /** public 目录(绝对路径) */
