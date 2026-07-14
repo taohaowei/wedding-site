@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-// 使用 import.meta.env.BASE_URL 确保 GH Pages 子路径下路由正确
-// Vite 的 base 配置会传入该值(如 /wedding-site/)
+// hash mode + 显式 base 路径，兼容 GitHub Pages 子路径部署
+// URL 格式如 /wedding-site/#/、/wedding-site/#/guide
 export const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
