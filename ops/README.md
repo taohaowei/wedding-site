@@ -1,7 +1,7 @@
-# 赴约 · 部署手册
+# 赴约 · 部署手册（模板）
 
-> 婚礼请柬 H5 — 陶浩伟 & 刘雨晴 · 2026.06.13
-> 域名:`www.mynight.top` · 部署:阿里云香港 ECS · 直连不走 CDN
+> 婚礼请柬 H5 — 开源婚礼邀请函模板
+> 使用前请将 `example.com` 替换为你的域名
 
 本目录(`ops/`)是把项目跑到生产的全部脚本与配置。**面向第一次用 PM2 / Nginx 的同学**,按章节走,基本不会踩坑。
 
@@ -12,7 +12,7 @@
 部署前请确认:
 
 - [ ] 已经买了一台**阿里云香港 ECS**(推荐 Ubuntu 22.04,2C2G 起步,香港免备案)
-- [ ] 已经在阿里云域名控制台,把 `mynight.top` 和 `www.mynight.top` 的 **A 记录**指向 ECS 公网 IP
+- [ ] 已经在域名控制台,把你的域名 **A 记录**指向服务器公网 IP
 - [ ] 已经在 ECS **安全组**放行 `22 / 80 / 443` 三个端口
 - [ ] 你的本地电脑能 `ssh root@<ECS 公网 IP>` 登录(密钥或密码均可)
 - [ ] 本地装好 `node 20+`、`npm`、`rsync`、`ssh`(macOS 都有,Linux 也常带)
@@ -78,9 +78,9 @@ bash first-deploy.sh <ecs-ip>
 
 ```
 婚礼请柬上线成功
- 主页面: https://www.mynight.top
- 后台:   https://www.mynight.top/admin
- API:    https://www.mynight.top/api/health
+ 主页面: https://www.example.com
+ 后台:   https://www.example.com/admin
+ API:    https://www.example.com/api/health
 ```
 
 ---
@@ -148,7 +148,7 @@ scp root@<ecs-ip>:/var/lib/wedding/wedding.db \
 
 ## 7. 后台访问
 
-浏览器打开 https://www.mynight.top/admin
+浏览器打开 https://www.example.com/admin
 
 密码 = 你 `.env` 里设置的 `ADMIN_PASSWORD`。
 
@@ -177,7 +177,7 @@ ssh root@<ecs-ip> "systemctl list-timers | grep certbot"
 
 | 现象 | 原因 / 处理 |
 |---|---|
-| **域名打不开** | 1) 检查 DNS:`dig www.mynight.top` 是不是你的 ECS IP;2) ECS 安全组 80/443 是不是开了 |
+| **域名打不开** | 1) 检查 DNS:`dig www.example.com` 是不是你的 ECS IP;2) ECS 安全组 80/443 是不是开了 |
 | **502 Bad Gateway** | 后端挂了。`ssh ... pm2 logs wedding-api` 看错误,通常是 ADMIN_PASSWORD 没注入 / DB 路径没权限 |
 | **无法申请证书** | certbot 走 80 端口验证,确认 80 通,且 Nginx 已经在跑 `mynight.conf`(http 段) |
 | **微信内打不开图片** | 微信对 https 强校验 — 确认证书有效,以及没有 mixed-content(http 资源混进 https 页面) |

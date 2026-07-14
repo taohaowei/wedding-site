@@ -1,0 +1,138 @@
+// ─────────────────────────────────────────────
+// 响应式工具类 / 全局响应式补丁
+// 作为 tokens.scss 的补充,各 section 可按需 @use
+// 也可在 main.ts/index.scss 中全局引入,提供一组通用工具类
+// ─────────────────────────────────────────────
+@use './tokens.scss' as *;
+
+// ─────────────────────────────────────────────
+// 间距工具类(基于流体 token)
+// ─────────────────────────────────────────────
+.p-xs { padding: $space-xs; }
+.p-sm { padding: $space-sm; }
+.p-md { padding: $space-md; }
+.p-lg { padding: $space-lg; }
+.p-xl { padding: $space-xl; }
+
+.px-sm { padding-left: $space-sm; padding-right: $space-sm; }
+.px-md { padding-left: $space-md; padding-right: $space-md; }
+.px-lg { padding-left: $space-lg; padding-right: $space-lg; }
+
+.py-sm { padding-top: $space-sm; padding-bottom: $space-sm; }
+.py-md { padding-top: $space-md; padding-bottom: $space-md; }
+.py-lg { padding-top: $space-lg; padding-bottom: $space-lg; }
+
+.gap-xs { gap: $space-xs; }
+.gap-sm { gap: $space-sm; }
+.gap-md { gap: $space-md; }
+.gap-lg { gap: $space-lg; }
+
+// ─────────────────────────────────────────────
+// 流体字号工具类
+// ─────────────────────────────────────────────
+.text-xs  { font-size: $font-xs; }
+.text-sm  { font-size: $font-sm; }
+.text-md  { font-size: $font-md; }
+.text-lg  { font-size: $font-lg; }
+.text-xl  { font-size: $font-xl; }
+.text-2xl { font-size: $font-2xl; }
+
+// ─────────────────────────────────────────────
+// 显隐工具类(配合断点)
+// ─────────────────────────────────────────────
+.hide-on-mobile {
+  @include sm { display: none !important; }
+}
+.hide-on-desktop {
+  @media (min-width: #{$bp-md}) { display: none !important; }
+}
+.hide-on-landscape {
+  @include landscape { display: none !important; }
+}
+.hide-on-short {
+  @include short { display: none !important; }
+}
+
+// ─────────────────────────────────────────────
+// flex 工具
+// ─────────────────────────────────────────────
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; }
+
+// ─────────────────────────────────────────────
+// 安全区工具(给绝对定位元素用)
+// ─────────────────────────────────────────────
+.safe-top    { padding-top: $safe-top; }
+.safe-bottom { padding-bottom: $safe-bottom; }
+.safe-left   { padding-left: $safe-left; }
+.safe-right  { padding-right: $safe-right; }
+
+// inset 占位(给 fixed 元素用,避免被刘海挡住)
+.inset-safe-top    { top: $safe-top; }
+.inset-safe-bottom { bottom: $safe-bottom; }
+
+// ─────────────────────────────────────────────
+// 横屏 / 矮屏自动缩放容器
+// 当用户横过手机时,12 屏内容会被压缩,提供一个收紧版本
+// ─────────────────────────────────────────────
+.shrink-on-landscape {
+  @include landscape {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+}
+
+// 横屏时给一些 hint:可在 section 内引导用户竖屏
+.show-rotate-hint-on-landscape {
+  display: none;
+  @include landscape {
+    display: block;
+  }
+}
+
+// ─────────────────────────────────────────────
+// 文本截断
+// ─────────────────────────────────────────────
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ─────────────────────────────────────────────
+// 无障碍 / 可访问性
+// ─────────────────────────────────────────────
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// 强制让某个元素脱离 overflow:hidden 影响(给浮层 / popper 用)
+.escape-overflow {
+  position: fixed;
+  z-index: 1000;
+}

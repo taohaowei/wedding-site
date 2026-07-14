@@ -1,6 +1,6 @@
-# 赴约 · 婚礼请柬 H5(前端)
+# 赴约 · 婚礼请柬 H5（前端）
 
-> 陶浩伟 ✕ 刘雨晴 · 2026.06.13 · 江西景德镇乐平市东方国际酒店
+> 开源婚礼邀请函模板
 
 ## 跑起来
 
@@ -61,7 +61,7 @@ src/
 
 public/
 ├── illustrations/          # 故事插画(1 张已有,其余自动占位)
-├── photos/                 # 三套婚纱照,已就位
+├── photos/                 # 婚纱照(已从 git 移除,使用前自行放入)
 │   ├── main-gown/
 │   ├── french/
 │   └── outdoor-bw/
@@ -100,6 +100,7 @@ public/
 - 港式黑白屏 9 切到时整页 body 加 `.theme-bw` class,主进度条/BgmPlayer 已有 fallback
 - iOS Safari 100vh 已用 `100dvh` + `--vh` 双重兜底
 - 微信内 BGM 已监听 `WeixinJSBridgeReady`,首次手势解除 muted
+- **微信分享卡片**:已加 OG meta + `/share-cover.jpg`(800×420),微信新版本会按 OG 抓取标题/描述/缩略图。但完美的"分享卡片"(自定义标题/描述/图片同时生效)需要 **HTTPS + 公众号 JSSDK 签名**(`wx.config` + `wx.updateAppMessageShareData`),当前部署是 HTTP 裸 IP,**这是已知限制**,等切到 HTTPS 域名后可补 JSSDK
 
 ## 部署
 

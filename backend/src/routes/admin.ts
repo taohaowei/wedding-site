@@ -32,7 +32,10 @@ admin.post('/login', async (c) => {
     return c.json({ ok: false, error: '密码不能为空' }, 400);
   }
 
-  const adminPassword = process.env.ADMIN_PASSWORD ?? 'admin123';
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  if (!adminPassword) {
+    return c.json({ ok: false, error: '服务端未配置 ADMIN_PASSWORD' }, 500);
+  }
   if (parsed.data.password !== adminPassword) {
     return c.json({ ok: false, error: '密码错误' }, 401);
   }

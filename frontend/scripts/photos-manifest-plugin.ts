@@ -114,9 +114,23 @@ function regenerateSet(photosRoot: string, setName: string): boolean {
 
 /** 为所有 set 生成 manifest */
 function regenerateAll(photosRoot: string, sets: string[]): void {
-  for (const s of sets) {
+  const finalSets = sets.length > 0 ? sets : discoverSets(photosRoot)
+  for (const s of finalSets) {
     regenerateSet(photosRoot, s)
   }
+}
+
+/** 自动扫描 photosRoot 下所有子目录(跳过 _ 和 . 开头) */
+function discoverSets(photosRoot: string): string[] {
+  if (!fs.existsSync(photosRoot)) return []
+  return fs.readdirSync(photosRoot).filter((name) => {
+    if (name.startsWith('_') || name.startsWith('.')) return false
+    try {
+      return fs.statSync(path.join(photosRoot, name)).isDirectory()
+    } catch {
+      return false
+    }
+  })
 }
 
 export default function photosManifestPlugin(options: PluginOptions = {}): Plugin {
@@ -158,7 +172,10 @@ export default function photosManifestPlugin(options: PluginOptions = {}): Plugi
         const segs = rel.split(path.sep)
         if (segs.length < 2) return
         const setName = segs[0]
-        if (!sets.includes(setName)) return
+        // 自动扫描模式(sets 为空)→ 接受任意非 _/. 开头的子目录
+        // 显式 sets 模式 → 仅接受列表中的
+        if (sets.length > 0 && !sets.includes(setName)) return
+        if (setName.startsWith('_') || setName.startsWith('.')) return
 
         const filename = segs[segs.length - 1]
         // 跳过 manifest.json 自身的变更,避免无限循环

@@ -30,7 +30,7 @@ npm start
 |---|---|---|
 | `PORT` | `3001` | HTTP 监听端口 |
 | `DB_PATH` | `./data/wedding.db` | SQLite 文件路径，生产建议 `/var/lib/wedding/wedding.db` |
-| `ADMIN_PASSWORD` | `admin123` | 后台登录密码（**生产必须改**） |
+| `ADMIN_PASSWORD` | 无默认值（启动时未设置会报错） | 后台登录密码（**必须设置**） |
 | `NODE_ENV` | `development` | `production` 时启用 Secure cookie + 严格 CORS |
 
 ## API 列表
@@ -83,7 +83,7 @@ curl -s -X POST http://127.0.0.1:3001/api/rsvp \
 # 3. 后台登录（保存 cookie 到 cookies.txt）
 curl -s -X POST http://127.0.0.1:3001/api/admin/login \
   -H 'Content-Type: application/json' \
-  -d '{"password":"admin123"}' \
+  -d '{"password":"你的密码"}' \
   -c cookies.txt
 # {"ok":true}
 
@@ -135,5 +135,5 @@ npm run test:watch # watch 模式
 
 - `data/` 目录已被 git 忽略，部署到生产时 `DB_PATH` 必须指到持久化挂载（如 `/var/lib/wedding/`）。
 - 限流是 in-memory，PM2 多实例会失效，本项目用单实例即可。
-- CORS：开发环境 reflect 任意 origin；生产环境只允许 `mynight.top` 和 `www.mynight.top`。
-- 密码通过环境变量 `ADMIN_PASSWORD` 注入，**严禁**写进代码或 git。
+- CORS：开发环境 reflect 任意 origin；生产环境只允许你的域名（在 `middleware/cors.ts` 中修改）。
+- 密码通过环境变量 `ADMIN_PASSWORD` 注入（**无默认值，启动时未设置会直接报错，防止使用弱密码上线**）。

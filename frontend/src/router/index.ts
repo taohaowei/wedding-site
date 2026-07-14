@@ -1,8 +1,9 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-// 用 hash 路由,部署到任何路径都不需要额外配置
+// history mode:URL 不带 #,避免微信安全访问中间页吞 hash
+// 需要 nginx 配 try_files SPA fallback(已配)
 export const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -13,6 +14,12 @@ export const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: () => import('@/pages/AdminPage.vue')
+    },
+    {
+      path: '/guide',
+      name: 'guide',
+      alias: ['/旅游'],
+      component: () => import('@/pages/GuidePage.vue')
     },
     {
       path: '/:pathMatch(.*)*',

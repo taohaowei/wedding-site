@@ -1,4 +1,6 @@
+// ─────────────────────────────────────────────
 // 设计 Token — 全部颜色 / 字体 / 阴影统一在此
+// ─────────────────────────────────────────────
 $bg: #FAF6F0;       // 米白
 $accent: #F5A572;   // 暖橘霞光
 $accent-deep: #E58955;
@@ -22,9 +24,50 @@ $shadow-sm: 0 2px 8px rgba(45, 33, 24, 0.08);
 $shadow-md: 0 8px 24px rgba(45, 33, 24, 0.12);
 $shadow-lg: 0 16px 48px rgba(45, 33, 24, 0.18);
 
+// ─────────────────────────────────────────────
+// 流体间距 token — 用 clamp(min, vw based, max) 生成
+// 各 section 直接复用,无需自己写 clamp
+//   xs ≈ 4-8px      细节(图标内边距、tag 间距)
+//   sm ≈ 8-14px     按钮内边距、小 gap
+//   md ≈ 14-24px    section 内常规间距
+//   lg ≈ 24-40px    section 顶 / 底大块留白
+//   xl ≈ 40-72px    超大留白(标题与正文之间)
+// ─────────────────────────────────────────────
+$space-xs: clamp(4px, 1vw, 8px);
+$space-sm: clamp(8px, 2vw, 14px);
+$space-md: clamp(14px, 3.5vw, 24px);
+$space-lg: clamp(24px, 5vw, 40px);
+$space-xl: clamp(40px, 8vw, 72px);
+
+// 流体字号(辅助,sections 可选用)
+$font-xs: clamp(0.72rem, 1.6vw, 0.82rem);
+$font-sm: clamp(0.82rem, 2vw, 0.95rem);
+$font-md: clamp(0.95rem, 2.4vw, 1.1rem);
+$font-lg: clamp(1.1rem, 3vw, 1.4rem);
+$font-xl: clamp(1.4rem, 4.5vw, 2rem);
+$font-2xl: clamp(2rem, 7vw, 3.5rem);
+
+// ─────────────────────────────────────────────
+// 断点(与 Tailwind / Bootstrap 对齐)
+// ─────────────────────────────────────────────
+$bp-xs: 360px;   // 小屏手机
+$bp-sm: 480px;   // 标准手机
+$bp-md: 768px;   // 平板竖屏
+$bp-lg: 1024px;  // 平板横屏 / 小笔记本
+$bp-xl: 1280px;  // 桌面
+
+// 安全区(刘海屏 / 灵动岛)
+$safe-top: env(safe-area-inset-top, 0px);
+$safe-right: env(safe-area-inset-right, 0px);
+$safe-bottom: env(safe-area-inset-bottom, 0px);
+$safe-left: env(safe-area-inset-left, 0px);
+
+// ─────────────────────────────────────────────
 // 易复用 mixin
+// ─────────────────────────────────────────────
 @mixin full-screen {
   width: 100vw;
+  // 三层兜底:JS --vh、原生 dvh、最后的 100vh
   height: calc(var(--vh, 1vh) * 100);
   height: 100dvh;
   display: flex;
@@ -58,4 +101,36 @@ $shadow-lg: 0 16px 48px rgba(45, 33, 24, 0.18);
 
   &:active { transform: scale(0.97); }
   &:disabled { opacity: 0.5; cursor: not-allowed; }
+}
+
+// ─────────────────────────────────────────────
+// 响应式断点 mixin — 各 section @use './tokens.scss' 后即可调用
+//   @include xs { ... }       max-width: 360px
+//   @include sm { ... }       max-width: 480px
+//   @include md { ... }       max-width: 768px
+//   @include lg { ... }       max-width: 1024px
+//   @include landscape { ... }  横屏
+//   @include portrait { ... }   竖屏
+//   @include short { ... }      矮屏(高度 < 600,旧 iPhone SE 横屏)
+//   @include touch { ... }      仅触摸设备
+//   @include reduce-motion { ... } 偏好减少动画
+// ─────────────────────────────────────────────
+@mixin xs { @media (max-width: #{$bp-xs}) { @content; } }
+@mixin sm { @media (max-width: #{$bp-sm}) { @content; } }
+@mixin md { @media (max-width: #{$bp-md}) { @content; } }
+@mixin lg { @media (max-width: #{$bp-lg}) { @content; } }
+@mixin xl { @media (min-width: #{$bp-xl}) { @content; } }
+@mixin landscape { @media (orientation: landscape) and (max-height: 500px) { @content; } }
+@mixin portrait { @media (orientation: portrait) { @content; } }
+@mixin short { @media (max-height: 600px) { @content; } }
+@mixin tall { @media (min-height: 900px) { @content; } }
+@mixin touch { @media (hover: none) and (pointer: coarse) { @content; } }
+@mixin reduce-motion { @media (prefers-reduced-motion: reduce) { @content; } }
+
+// 安全区内边距 helper
+@mixin safe-padding {
+  padding-top: $safe-top;
+  padding-right: $safe-right;
+  padding-bottom: $safe-bottom;
+  padding-left: $safe-left;
 }

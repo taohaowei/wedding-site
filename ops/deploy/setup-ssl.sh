@@ -3,7 +3,7 @@
 # Let's Encrypt 证书申请脚本(在服务器上跑)
 #
 # 前置条件:
-#   1. 域名 mynight.top / www.mynight.top 已解析到本机公网 IP
+#   1. 域名已解析到本机公网 IP
 #   2. ECS 安全组 + 防火墙已放行 80/443
 #   3. Nginx 已经装好,并且 mynight.conf 已经 install(http server 段
 #      监听 80 是必需的,certbot 走 http-01 挑战)
@@ -24,8 +24,8 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-DOMAIN_PRIMARY="${DOMAIN_PRIMARY:-www.mynight.top}"
-DOMAIN_ALIAS="${DOMAIN_ALIAS:-mynight.top}"
+DOMAIN_PRIMARY="${DOMAIN_PRIMARY:-www.example.com}"
+DOMAIN_ALIAS="${DOMAIN_ALIAS:-example.com}"
 EMAIL="${EMAIL:-}"
 
 if [[ -z "$EMAIL" ]]; then

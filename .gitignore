@@ -46,6 +46,9 @@ backend/data/
 # 真人参考照(隐私,本地 backup)
 _references/
 
+# 婚纱照(开源后用户自行替换)
+frontend/public/photos/
+
 # 临时
 tmp/
 .tmp/

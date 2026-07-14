@@ -1,11 +1,19 @@
 @use './fonts.scss';
 @use './tokens.scss' as *;
+@use './responsive.scss';
 
-* {
+// ─────────────────────────────────────────────
+// CSS Reset 加强
+// ─────────────────────────────────────────────
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  // 防止某些浏览器 word-break 把英文长串撑破容器
+  word-wrap: break-word;
 }
 
 html, body {
@@ -15,26 +23,56 @@ html, body {
   color: $text;
   font-family: $sans;
   overscroll-behavior: none;
-  overflow: hidden;
+  // 防止水平滚动(任何 section 写炸都不会让页面横向滚)
+  overflow-x: hidden;
+  // 主体仍然锁定为不滚动(12 屏 Swiper 自己接管)
+  overflow-y: hidden;
   width: 100%;
   height: 100%;
   font-size: 16px;
   line-height: 1.6;
+  // iOS 滚动惯性
+  -webkit-overflow-scrolling: touch;
+  // 防止 iOS 横屏自动放大字体
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+// 安全区(刘海屏 / 灵动岛 / 底部 home indicator)
+// body 加 padding,#app 内的 fixed 子元素也可用 env() 获取
+body {
+  padding-top: $safe-top;
+  padding-bottom: $safe-bottom;
+  // 横屏时左右安全区(横屏 iPhone 刘海在侧)
+  padding-left: $safe-left;
+  padding-right: $safe-right;
 }
 
 #app {
   width: 100vw;
+  // 三层兜底:JS --vh、原生 dvh、最后的 100vh
   height: calc(var(--vh, 1vh) * 100);
   height: 100dvh;
   overflow: hidden;
   position: relative;
 }
 
-img { max-width: 100%; display: block; -webkit-user-drag: none; }
+// ─────────────────────────────────────────────
+// 媒体元素 reset(防止图片 / 视频 / svg 撑破容器)
+// ─────────────────────────────────────────────
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+}
 
-button { font: inherit; }
+// img 单独再保留(部分组件可能直接覆盖 height)
+img { max-width: 100%; }
 
-input, textarea {
+button { font: inherit; cursor: pointer; }
+
+input, textarea, select {
   font: inherit;
   color: inherit;
   background: transparent;
@@ -42,6 +80,11 @@ input, textarea {
   outline: 0;
   -webkit-appearance: none;
   appearance: none;
+}
+
+// 修复 iOS Safari 中 input 默认圆角
+input, textarea {
+  border-radius: 0;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -73,10 +116,10 @@ body.theme-bw {
 .swiper { width: 100%; height: 100%; }
 .swiper-slide { display: block; position: relative; }
 
-// 主进度条
+// 主进度条(留出顶部安全区)
 .progress-bar {
   position: fixed;
-  top: 0;
+  top: $safe-top;
   left: 0;
   height: 3px;
   background: linear-gradient(90deg, $accent, $muted);
@@ -131,4 +174,44 @@ body.theme-bw {
   50% { transform: scaleY(1); transform-origin: top; }
   51% { transform: scaleY(1); transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+// ─────────────────────────────────────────────
+// 偏好减少动画(操作系统级)
+// ─────────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ─────────────────────────────────────────────
+// 打印样式(亲友把请柬打印出来时不至于全黑 / 翻车)
+// ─────────────────────────────────────────────
+@media print {
+  html, body, #app {
+    overflow: visible !important;
+    height: auto !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .noise-overlay,
+  .progress-bar,
+  .scroll-hint {
+    display: none !important;
+  }
+  .swiper-slide {
+    page-break-after: always;
+    break-after: page;
+  }
+  // 取消所有动画
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

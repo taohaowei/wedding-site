@@ -46,9 +46,9 @@ defineEmits<{ (e: 'restart'): void }>()
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 0 24px;
-  max-width: 88vw;
+  gap: clamp(10px, 2vh, 14px);
+  padding: 0 clamp(14px, 5vw, 24px);
+  max-width: 92vw;
 }
 
 .badge {
@@ -56,8 +56,8 @@ defineEmits<{ (e: 'restart'): void }>()
   font-family: $serif-en;
   font-style: italic;
   color: $accent-deep;
-  letter-spacing: .35em;
-  font-size: .85rem;
+  letter-spacing: clamp(.2em, 1vw, .35em);
+  font-size: clamp(.74rem, 2.6vw, .85rem);
 }
 
 .lines {
@@ -67,17 +67,17 @@ defineEmits<{ (e: 'restart'): void }>()
   gap: 6px;
   font-family: $serif-zh;
   font-weight: 500;
-  font-size: clamp(1.4rem, 5.5vw, 1.85rem);
-  letter-spacing: .12em;
+  font-size: clamp(1.2rem, 5vw, 1.85rem);
+  letter-spacing: clamp(.06em, .8vw, .12em);
   color: $text;
 }
 
 .wish {
   margin: 8px 0;
   font-family: $serif-zh;
-  letter-spacing: .15em;
+  letter-spacing: clamp(.08em, .8vw, .15em);
   color: $accent-deep;
-  font-size: 1.05rem;
+  font-size: clamp(.92rem, 3.4vw, 1.05rem);
 }
 
 .sign {
@@ -85,27 +85,27 @@ defineEmits<{ (e: 'restart'): void }>()
   font-style: italic;
   color: $text-light;
   letter-spacing: .15em;
-  font-size: 1rem;
+  font-size: clamp(.88rem, 3.2vw, 1rem);
 }
 
 .signature-zh {
   margin: 0;
   font-family: $serif-zh;
-  letter-spacing: .25em;
+  letter-spacing: clamp(.15em, .8vw, .25em);
   color: $text;
-  font-size: 1.05rem;
+  font-size: clamp(.92rem, 3.4vw, 1.05rem);
 }
 
 .date {
   margin: 6px 0 0 0;
   font-family: $serif-en;
-  letter-spacing: .25em;
+  letter-spacing: clamp(.15em, .8vw, .25em);
   color: $accent-deep;
-  font-size: 1rem;
+  font-size: clamp(.9rem, 3.2vw, 1rem);
 }
 
 .restart {
-  margin-top: 28px;
+  margin-top: clamp(18px, 3vh, 28px);
   background: transparent;
   border: 1px dashed rgba(110, 92, 142, .35);
   color: $muted;
@@ -118,5 +118,12 @@ defineEmits<{ (e: 'restart'): void }>()
   opacity: .55;
   transition: opacity .25s;
   &:hover { opacity: 1; }
+}
+
+/* 短屏适配 */
+@media (max-height: 700px) {
+  .content { gap: 8px; }
+  .lines { gap: 4px; }
+  .restart { margin-top: 14px; }
 }
 </style>

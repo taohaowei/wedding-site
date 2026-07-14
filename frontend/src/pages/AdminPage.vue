@@ -1,7 +1,7 @@
 <template>
   <div class="admin-page">
     <header class="topbar">
-      <h1>赴约 · 后台</h1>
+      <h1>邀请函 · 后台</h1>
       <div class="actions" v-if="store.loggedIn">
         <a class="btn-primary" :href="exportUrl" download>导出 CSV</a>
         <button class="btn-ghost" @click="logout">登出</button>

@@ -4,7 +4,7 @@ import type { MiddlewareHandler } from 'hono';
 /**
  * CORS 中间件
  * - 开发环境：允许 *
- * - 生产环境：只允许 mynight.top 和 www.mynight.top
+ * - 生产环境：只允许你的域名（使用前请修改 allowed 数组）
  *
  * 注：因为前端会带 cookie 调用后台接口（/api/admin/*），
  *     当 origin 是具体域名时必须加 credentials: true，
@@ -17,7 +17,7 @@ export function createCors(): MiddlewareHandler {
     return cors({
       origin: (origin) => {
         if (!origin) return null;
-        const allowed = ['https://mynight.top', 'https://www.mynight.top'];
+        const allowed = ['https://example.com', 'https://www.example.com'];
         return allowed.includes(origin) ? origin : null;
       },
       credentials: true,

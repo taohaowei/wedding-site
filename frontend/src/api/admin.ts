@@ -4,7 +4,7 @@ import type { ApiResp, RsvpRecord } from './types'
 export async function adminLogin(password: string): Promise<ApiResp> {
   if (isMock()) {
     if (password === 'demo' || password === '123456') { mockLogged = true; return { ok: true } }
-    return { ok: false, error: '密码错误(mock 模式)' }
+    return { ok: false, error: '密码错误(mock 模式 - 可用 demo/123456)' }
   }
   try {
     const r = await http.post('/admin/login', { password })
@@ -27,7 +27,7 @@ export async function adminLogout(): Promise<ApiResp> {
 
 const mockRecords: RsvpRecord[] = [
   {
-    id: 1, name: '陶大伯', attending: 'yes', headcount: 2, need_lodging: 'yes', arrival_date: '0612',
+    id: 1, name: '张大哥', attending: 'yes', headcount: 2, need_lodging: 'yes', arrival_date: '0612',
     dietary: '不吃辣', message: '祝你们新婚快乐~', created_at: '2026-05-12T08:01:23Z'
   },
   {

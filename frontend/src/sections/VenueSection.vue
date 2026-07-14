@@ -1,5 +1,11 @@
 <template>
-  <section class="venue">
+  <section
+    class="venue"
+    ref="venueEl"
+    @wheel="onWheel"
+    @touchstart.passive="onTouchStart"
+    @touchmove="onTouchMove"
+  >
     <div class="bg-tint"></div>
 
     <div class="container">
@@ -36,14 +42,15 @@
         </button>
       </div>
 
-      <!-- 次日景德镇 -->
-      <div class="next-day-card">
+      <!-- 次日游玩 -->
+      <RouterLink to="/guide" class="next-day-card" aria-label="查看一日攻略">
         <div class="nd-icon">🍵</div>
         <div class="nd-text">
           <p class="nd-title">次日</p>
-          <p class="nd-desc">组团去景德镇玩 · 一起喝口瓷都的茶</p>
+          <p class="nd-desc">一起在城里逛逛 · 感受慢生活</p>
         </div>
-      </div>
+        <div class="nd-cta">查看攻略 <span class="arrow">→</span></div>
+      </RouterLink>
 
       <!-- 交通建议 -->
       <div class="traffic-card">
@@ -59,14 +66,14 @@
             <div class="tc-mode-icon">🚄</div>
             <div class="tc-mode-body">
               <p class="tc-mode-title">高铁</p>
-              <p class="tc-mode-desc">可直达「景德镇站」或「乐平北站」</p>
+              <p class="tc-mode-desc">可直达市区</p>
             </div>
           </div>
           <div class="tc-mode">
             <div class="tc-mode-icon">✈️</div>
             <div class="tc-mode-body">
               <p class="tc-mode-title">飞机</p>
-              <p class="tc-mode-desc">建议飞至景德镇,顺便来场瓷都之旅 🍵</p>
+              <p class="tc-mode-desc">建议飞至最近机场,顺便来场旅行 🍵</p>
             </div>
           </div>
         </div>
@@ -74,8 +81,9 @@
 
       <div class="map-block">
         <p class="badge">Location</p>
-        <h3 class="venue-title">东 · 方 · 国 · 际 · 酒 · 店</h3>
-        <p class="venue-addr">江西省 · 景德镇 · 乐平市</p>
+        <h3 class="venue-title">婚 · 礼 · 酒 · 店</h3>
+        <p class="venue-hall">· 宴 会 厅 ·</p>
+        <p class="venue-addr">浙江省 · 杭州</p>
 
         <div class="map-frame">
           <iframe
@@ -167,12 +175,52 @@ function collapse() {
 }
 
 // 高德的 marker 链接(若被墙就走 placeholder)
-const venueName = encodeURIComponent('东方国际酒店')
-const mapUrl = `https://uri.amap.com/marker?position=117.13,28.97&name=${venueName}&src=mywedding&coordinate=gaode&callnative=0`
-const navUrl = `https://uri.amap.com/navigation?to=117.13,28.97,${venueName}&mode=car&policy=0&src=mywedding&coordinate=gaode&callnative=1`
-const navBaiduUrl = `https://api.map.baidu.com/marker?location=28.97,117.13&title=${venueName}&content=江西省景德镇乐平市&output=html&coord_type=wgs84`
+// 示例场地坐标(使用前请替换为你的真实坐标)
+const venueName = encodeURIComponent('婚礼酒店·宴会厅')
+const mapUrl = `https://uri.amap.com/marker?position=120.15,30.28&name=${venueName}&src=mywedding&coordinate=gaode&callnative=0`
+const navUrl = `https://uri.amap.com/navigation?to=120.15,30.28,${venueName}&mode=car&policy=0&src=mywedding&coordinate=gaode&callnative=1`
+const navBaiduUrl = `https://api.map.baidu.com/marker?location=30.28,120.15&title=${venueName}&content=示例地址&output=html&coord_type=wgs84`
 
 const mapVisible = ref(false)
+
+// ====== 滚动拦截:让 venue 内部滚动优先,touch 边缘时再让 Swiper 翻屏 ======
+const venueEl = ref<HTMLElement | null>(null)
+let touchStartY = 0
+
+function isAtTop(el: HTMLElement) {
+  return el.scrollTop <= 0
+}
+function isAtBottom(el: HTMLElement) {
+  return Math.ceil(el.scrollTop + el.clientHeight) >= el.scrollHeight - 1
+}
+
+function onWheel(e: WheelEvent) {
+  const el = venueEl.value
+  if (!el) return
+  const canScroll = el.scrollHeight > el.clientHeight + 1
+  if (!canScroll) return  // 不需要滚动 → 让事件冒泡,Swiper 翻屏
+  // 鼠标滚轮:venue 自己消费,不让 Swiper 接管翻屏
+  // PC 用户翻到下一屏可用键盘 ↓
+  e.stopPropagation()
+}
+
+function onTouchStart(e: TouchEvent) {
+  touchStartY = e.touches[0]?.clientY ?? 0
+}
+
+function onTouchMove(e: TouchEvent) {
+  const el = venueEl.value
+  if (!el) return
+  const currentY = e.touches[0]?.clientY ?? 0
+  const deltaY = touchStartY - currentY  // > 0 = 上滑(看下面),< 0 = 下滑(看上面)
+  const goingDown = deltaY > 0
+  const goingUp = deltaY < 0
+  // 内部还能滚 → 拦截,Swiper 不翻屏
+  if ((goingDown && !isAtBottom(el)) || (goingUp && !isAtTop(el))) {
+    e.stopPropagation()
+  }
+  // 边界时让 Swiper 处理(touchReleaseOnEdges 已开,会翻屏)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -184,7 +232,7 @@ const mapVisible = ref(false)
   position: relative;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 6dvh 24px 4dvh 24px;
+  padding: clamp(5dvh, 6dvh, 7dvh) clamp(14px, 5vw, 24px) clamp(3dvh, 4dvh, 4dvh);
   background: $bg;
 }
 
@@ -212,6 +260,9 @@ const mapVisible = ref(false)
   display: flex;
   flex-direction: column;
   gap: 6px;
+  /* 给 BgmPlayer 留位 — 仅右侧 */
+  padding-right: 50px;
+  padding-left: 8px;
 }
 
 .badge {
@@ -219,16 +270,16 @@ const mapVisible = ref(false)
   font-family: $serif-en;
   font-style: italic;
   color: $accent-deep;
-  letter-spacing: .35em;
-  font-size: .8rem;
+  letter-spacing: clamp(.18em, .9vw, .35em);
+  font-size: clamp(.72rem, 2.4vw, .8rem);
   text-transform: uppercase;
 }
 
 .title {
   margin: 0;
   font-family: $serif-zh;
-  font-size: clamp(1.5rem, 5.5vw, 2rem);
-  letter-spacing: .15em;
+  font-size: clamp(1.3rem, 5.2vw, 2rem);
+  letter-spacing: clamp(.08em, .8vw, .15em);
 }
 
 .timeline {
@@ -249,20 +300,21 @@ const mapVisible = ref(false)
 
   li {
     position: relative;
-    padding: 10px 0 10px 36px;
+    padding: 10px 0 10px clamp(28px, 9vw, 36px);
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: clamp(8px, 3vw, 14px);
     font-family: $serif-zh;
     overflow: hidden;
 
     .time {
       font-family: $serif-en;
       color: $accent-deep;
-      font-size: .95rem;
+      font-size: clamp(.78rem, 3vw, .95rem);
       font-style: italic;
-      min-width: 96px;
+      min-width: clamp(74px, 22vw, 96px);
       letter-spacing: .03em;
+      flex-shrink: 0;
     }
 
     .dot {
@@ -277,8 +329,8 @@ const mapVisible = ref(false)
 
     .event {
       color: $text;
-      font-size: 1rem;
-      letter-spacing: .08em;
+      font-size: clamp(.88rem, 3.4vw, 1rem);
+      letter-spacing: .06em;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -289,12 +341,12 @@ const mapVisible = ref(false)
       .time {
         color: $accent-deep;
         font-weight: 600;
-        font-size: 1.02rem;
+        font-size: clamp(.82rem, 3.2vw, 1.02rem);
       }
       .event {
         color: $accent-deep;
         font-weight: 700;
-        letter-spacing: .12em;
+        letter-spacing: .1em;
       }
       .dot.dot-hl {
         background: $accent-deep;
@@ -360,6 +412,15 @@ const mapVisible = ref(false)
   border: 1px solid rgba(245, 165, 114, .25);
   border-radius: 16px;
   box-shadow: $shadow-sm;
+  text-decoration: none;
+  color: $text;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+
+  &:hover, &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(245, 165, 114, .3);
+  }
 
   .nd-icon {
     font-size: 1.8rem;
@@ -369,6 +430,8 @@ const mapVisible = ref(false)
     display: flex;
     flex-direction: column;
     gap: 2px;
+    flex: 1;
+    min-width: 0;
   }
   .nd-title {
     margin: 0;
@@ -384,6 +447,23 @@ const mapVisible = ref(false)
     color: $text;
     font-size: .98rem;
     letter-spacing: .06em;
+  }
+  .nd-cta {
+    flex-shrink: 0;
+    font-family: $serif-zh;
+    font-size: .82rem;
+    color: $accent-deep;
+    letter-spacing: .1em;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .65);
+    white-space: nowrap;
+
+    .arrow {
+      font-family: $serif-en;
+      font-style: italic;
+      margin-left: 2px;
+    }
   }
 }
 
@@ -481,6 +561,14 @@ const mapVisible = ref(false)
     font-family: $serif-zh;
     font-size: 1.3rem;
     letter-spacing: .15em;
+  }
+  .venue-hall {
+    margin: 2px 0 0 0;
+    font-family: $serif-zh;
+    color: $accent-deep;
+    font-size: 1rem;
+    letter-spacing: .25em;
+    font-weight: 600;
   }
   .venue-addr {
     margin: 0;

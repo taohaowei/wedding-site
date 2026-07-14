@@ -6,7 +6,7 @@
 # 前置:
 #   1. 已 ssh root@<host> bash setup-server.sh(服务器装好基础环境)
 #   2. 已 cp .env.example .env 并填好 ADMIN_PASSWORD / EMAIL / SESSION_SECRET
-#   3. 域名 mynight.top / www.mynight.top 已解析到本台 ECS 公网 IP
+#   3. 域名已解析到本台服务器公网 IP
 #   4. ECS 安全组放行 22 / 80 / 443
 #
 # 行为:

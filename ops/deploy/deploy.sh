@@ -5,7 +5,7 @@
 #   bash deploy.sh <ecs_host> [<ssh_user>]
 # 示例:
 #   bash deploy.sh 47.xxx.xxx.xxx
-#   bash deploy.sh wedding.mynight.top wedding-admin
+#   bash deploy.sh www.example.com wedding-admin
 #
 # 行为:
 #   1. 本地 build 前端(frontend/)和后端(backend/)
@@ -149,11 +149,11 @@ cat <<EOF
 
 ========================================================================
  部署完成
-   前端: https://www.mynight.top
-   后台: https://www.mynight.top/admin
-   API : https://www.mynight.top/api/health
+   前端: https://www.example.com
+   后台: https://www.example.com/admin
+   API : https://www.example.com/api/health
  远端日志:
    ssh ${REMOTE} "pm2 logs wedding-api"
-   ssh ${REMOTE} "tail -f /var/log/nginx/mynight.error.log"
+   ssh ${REMOTE} "tail -f /var/log/nginx/example.error.log"
 ========================================================================
 EOF
