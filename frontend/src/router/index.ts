@@ -1,9 +1,9 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-// hash mode:URL 带 #/，兼容 GitHub Pages 无 SPA fallback 的问题
-// 所有资源路径仍由 BASE_URL 处理，确保子路径部署正确
+// 使用 import.meta.env.BASE_URL 确保 GH Pages 子路径下路由正确
+// Vite 的 base 配置会传入该值(如 /wedding-site/)
 export const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
