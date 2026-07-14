@@ -1,0 +1,402 @@
+ops/deploy/deploy.sh
+  a0214483a01657e1 8,152-154,157
+frontend/package.json
+  9082d1f98c2a273a 15,18
+.gitignore
+  a0214483a01657e1 49-51
+frontend/src/components/TimelineBadge.vue
+  9082d1f98c2a273a 1-88
+README.md
+  a0214483a01657e1 1-81
+frontend/src/main.ts
+  9082d1f98c2a273a 7-26,28-30,32,34-40
+frontend/src/styles/tokens.scss
+  9082d1f98c2a273a 1,3,27-65,67,70,105-135
+frontend/tests/e2e/run-and-report.sh
+  9082d1f98c2a273a 1-47
+frontend/src/composables/useAutoplay.ts
+  9082d1f98c2a273a 1-344
+ops/nginx/mynight.conf
+  a0214483a01657e1 2-3,10,18,27,30-31,73-74
+ops/deploy/first-deploy.sh
+  a0214483a01657e1 9
+frontend/src/router/index.ts
+  9082d1f98c2a273a 1,3-4,6,19-23
+docs/赴约-架构方案.md
+  a0214483a01657e1 3,209,275,298
+frontend/src/sections/PhotoSection.vue
+  9082d1f98c2a273a 49-55,61-63,65,72,74-77,83,85,88-90,95-96,98,100-104,111-115,120,122,124-126,129-180,183-199
+ops/README.md
+  a0214483a01657e1 1,3-4,15,81-83,151,180
+frontend/scripts/photos-manifest-plugin.ts
+  9082d1f98c2a273a 117-118,123-133,175-178
+frontend/src/api/admin.ts
+  a0214483a01657e1 7,30
+backend/README.md
+  a0214483a01657e1 33,86,138-139
+frontend/src/pages/GuidePage.vue
+  9082d1f98c2a273a 1-282,284-761
+  a0214483a01657e1 283
+frontend/src/components/FormStepper.vue
+  a0214483a01657e1 86
+  9082d1f98c2a273a 2,5-10,15-16,27,37-38,49-50,61-69,72-73,82-85,87-90,93,95,103-111,115-116,126-127,133,141,164-166,171-173,178-180,213-224,236-260,262-275,288-292,301-333,346,348,350-351,356,358-360,368,381,384,387-388,391,394-396,398-407,419-420,422-423,426-431,438,446-448,451,454,456-460,466-467,470-472,478,481-492,504-507,524-577
+frontend/README.md
+  9082d1f98c2a273a 103
+  a0214483a01657e1 1,3,64
+frontend/tests/e2e/responsive.spec.mjs
+  9082d1f98c2a273a 1-351
+frontend/src/sections/CoverSection.vue
+  a0214483a01657e1 19,21,27,30
+  9082d1f98c2a273a 3-6,8-9,18,20,52-56,70-85,88-99,104,106,110-116,122,136-137,139,142-151,154-155,157-160,164-181,186-187,189-191,201-202,205-219,221-229,249-328
+frontend/index.html
+  a0214483a01657e1 10,13,17,19-21,24-25,29-31,34-36,43,50,54-55,58-59
+  9082d1f98c2a273a 11-12,14-16,18,22-23,26-28,32-33,37-42,44-49,51-53,56-57,60-61
+frontend/src/pages/AdminPage.vue
+  9082d1f98c2a273a 4
+backend/src/middleware/cors.ts
+  a0214483a01657e1 7,20
+LICENSE
+  a0214483a01657e1 1-21
+frontend/src/styles/index.scss
+  9082d1f98c2a273a 5-10,15-16,26-29,34-48,53,60-67,70-71,73,75,85-87,119,122,178-216
+frontend/src/sections/VenueSection.vue
+  a0214483a01657e1 45-46,50,69,76,84-86,178-182
+  9082d1f98c2a273a 2-8,52-53,185-223,235,263-265,273-274,281-282,303,306,313,315,317,332-333,344,349,415-418,420-423,433-434,451-466,565-572
+frontend/tests/e2e/README.md
+  9082d1f98c2a273a 1-72
+frontend/src/assets/xiaoshan.geo.json
+  9082d1f98c2a273a 1
+frontend/src/sections/StorySection.vue
+  9082d1f98c2a273a 2-5,7-32,43,53,57-58,61,66,69-91,107-110,114,120-123,139-141,157,160-191,193-198,204-206,226-433,436-439,445-448,451-452,454-464,472-473,476-477,483,485,492-494,497-510,516-517,522-525,527-536,538-639,641-645
+frontend/src/data/stories.ts
+  9082d1f98c2a273a 2,4,8-9,12,21-22,24,35-36,39-40,49-50,57-58,61,64-66,68-70,72-73,79-81,85-86
+frontend/src/components/OneKmAnimation.vue
+  9082d1f98c2a273a 1-177,179-195,197-206,208-224,226-727
+  a0214483a01657e1 178,196,207,225
+frontend/src/sections/ThanksSection.vue
+  9082d1f98c2a273a 49-51,59-60,70-71,78,80,88,94,96,102,104,108,122-127
+frontend/src/sections/RsvpSection.vue
+  9082d1f98c2a273a 46,48-50,70,73-74,82-86,94-95,101-103,110-111,119-126
+frontend/src/pages/HomePage.vue
+  9082d1f98c2a273a 8-35,39,54-58,67,80,88,102-103,111-124,136-139,170-194,196-233
+frontend/src/styles/responsive.scss
+  9082d1f98c2a273a 1-138
+backend/src/routes/admin.ts
+  a0214483a01657e1 35-38
+ops/deploy/setup-ssl.sh
+  a0214483a01657e1 6,27-28
+frontend/scripts/gen-geo-paths.mjs
+  9082d1f98c2a273a 1-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "90447ddbcedb222d4e18421db007e533bab5019c",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 6328,
+      "total_deletions": 1321,
+      "accepted_lines": 5039,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/main-gown/manifest.json": {
+          "deletions": 2
+        },
+        "frontend/src/styles/responsive.scss": {
+          "additions": 138,
+          "accepted_lines": 138
+        },
+        "frontend/src/styles/index.scss": {
+          "additions": 89,
+          "deletions": 7,
+          "accepted_lines": 89
+        },
+        "frontend/scripts/gen-geo-paths.mjs": {
+          "additions": 64,
+          "deletions": 3,
+          "accepted_lines": 61
+        },
+        "frontend/src/pages/HomePage.vue": {
+          "additions": 131,
+          "deletions": 14,
+          "accepted_lines": 121
+        },
+        "frontend/src/main.ts": {
+          "additions": 31,
+          "deletions": 4,
+          "accepted_lines": 31
+        },
+        "frontend/public/photos/engagement/_order.json": {
+          "additions": 7,
+          "deletions": 1,
+          "accepted_lines": 6
+        },
+        "frontend/src/sections/ThanksSection.vue": {
+          "additions": 22,
+          "deletions": 15,
+          "accepted_lines": 22
+        },
+        "frontend/src/sections/CoverSection.vue": {
+          "additions": 485,
+          "deletions": 348,
+          "accepted_lines": 203
+        },
+        "docs/距离动画-调研.md": {
+          "additions": 68,
+          "accepted_lines": 68
+        },
+        "frontend/public/photos/engagement/manifest.json": {
+          "additions": 7,
+          "deletions": 1,
+          "accepted_lines": 6
+        },
+        "frontend/src/assets/hangzhou.geo.json": {
+          "additions": 1,
+          "accepted_lines": 1
+        },
+        "frontend/src/data/stories.ts": {
+          "additions": 36,
+          "deletions": 20,
+          "accepted_lines": 30
+        },
+        "frontend/index.html": {
+          "additions": 59,
+          "deletions": 8,
+          "accepted_lines": 32
+        },
+        "frontend/scripts/screenshots-rsvp/capture.mjs": {
+          "additions": 179
+        },
+        "frontend/scripts/photos-manifest-plugin.ts": {
+          "additions": 19,
+          "deletions": 2,
+          "accepted_lines": 19
+        },
+        "frontend/README.md": {
+          "additions": 1,
+          "accepted_lines": 1
+        },
+        "frontend/src/components/FormStepper.vue": {
+          "additions": 290,
+          "deletions": 88,
+          "accepted_lines": 277
+        },
+        "frontend/scripts/screenshots-rsvp/helper.js": {
+          "additions": 23
+        },
+        "frontend/src/assets/xiaoshan.geo.json": {
+          "additions": 1,
+          "accepted_lines": 1
+        },
+        "frontend/src/composables/useAutoplay.ts": {
+          "additions": 348,
+          "deletions": 4,
+          "accepted_lines": 344
+        },
+        "docs/responsive-best-practice.md": {
+          "additions": 345,
+          "accepted_lines": 345
+        },
+        "frontend/src/pages/GuidePage.vue": {
+          "additions": 948,
+          "deletions": 187,
+          "accepted_lines": 760
+        },
+        "frontend/tests/e2e/responsive.spec.mjs": {
+          "additions": 374,
+          "deletions": 23,
+          "accepted_lines": 351
+        },
+        "frontend/package.json": {
+          "additions": 2,
+          "accepted_lines": 2
+        },
+        "frontend/src/sections/RsvpSection.vue": {
+          "additions": 35,
+          "deletions": 17,
+          "accepted_lines": 28
+        },
+        "frontend/scripts/screenshots-rsvp/capture.py": {
+          "additions": 175,
+          "deletions": 1,
+          "accepted_lines": 174
+        },
+        "frontend/src/router/index.ts": {
+          "additions": 10,
+          "deletions": 3,
+          "accepted_lines": 10
+        },
+        "frontend/src/sections/PhotoSection.vue": {
+          "additions": 124,
+          "deletions": 28,
+          "accepted_lines": 110
+        },
+        "docs/multi-device-testing.md": {
+          "additions": 207,
+          "accepted_lines": 207
+        },
+        "frontend/src/pages/AdminPage.vue": {
+          "additions": 1,
+          "deletions": 1,
+          "accepted_lines": 1
+        },
+        "frontend/src/components/OneKmAnimation.vue": {
+          "additions": 1098,
+          "deletions": 371,
+          "accepted_lines": 723
+        },
+        "frontend/src/styles/tokens.scss": {
+          "additions": 75,
+          "accepted_lines": 75
+        },
+        "frontend/src/sections/VenueSection.vue": {
+          "additions": 139,
+          "deletions": 52,
+          "accepted_lines": 101
+        },
+        "frontend/public/photos/main-gown/_order.json": {
+          "additions": 7,
+          "deletions": 2,
+          "accepted_lines": 5
+        },
+        "frontend/tests/e2e/README.md": {
+          "additions": 72,
+          "accepted_lines": 72
+        },
+        "frontend/tests/e2e/run-and-report.sh": {
+          "additions": 47,
+          "accepted_lines": 47
+        },
+        "frontend/src/sections/StorySection.vue": {
+          "additions": 574,
+          "deletions": 111,
+          "accepted_lines": 490
+        },
+        "frontend/src/components/TimelineBadge.vue": {
+          "additions": 96,
+          "deletions": 8,
+          "accepted_lines": 88
+        }
+      }
+    },
+    "a0214483a01657e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e61bb103-f3d2-409a-a7ea-c29cbfcd5b57",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 194,
+      "total_deletions": 96,
+      "accepted_lines": 194,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "ops/deploy/first-deploy.sh": {
+          "additions": 1,
+          "deletions": 1,
+          "accepted_lines": 1
+        },
+        "frontend/README.md": {
+          "additions": 3,
+          "deletions": 3,
+          "accepted_lines": 3
+        },
+        "ops/deploy/setup-ssl.sh": {
+          "additions": 3,
+          "deletions": 3,
+          "accepted_lines": 3
+        },
+        "backend/src/middleware/cors.ts": {
+          "additions": 2,
+          "deletions": 2,
+          "accepted_lines": 2
+        },
+        "frontend/src/components/FormStepper.vue": {
+          "additions": 1,
+          "deletions": 1,
+          "accepted_lines": 1
+        },
+        ".gitignore": {
+          "additions": 3,
+          "accepted_lines": 3
+        },
+        "README.md": {
+          "additions": 81,
+          "accepted_lines": 81
+        },
+        "frontend/src/sections/VenueSection.vue": {
+          "additions": 13,
+          "deletions": 12,
+          "accepted_lines": 13
+        },
+        "ops/deploy/deploy.sh": {
+          "additions": 5,
+          "deletions": 5,
+          "accepted_lines": 5
+        },
+        "ops/nginx/mynight.conf": {
+          "additions": 9,
+          "deletions": 20,
+          "accepted_lines": 9
+        },
+        "frontend/src/sections/CoverSection.vue": {
+          "additions": 4,
+          "deletions": 4,
+          "accepted_lines": 4
+        },
+        "LICENSE": {
+          "additions": 21,
+          "accepted_lines": 21
+        },
+        "backend/README.md": {
+          "additions": 4,
+          "deletions": 4,
+          "accepted_lines": 4
+        },
+        "ops/README.md": {
+          "additions": 9,
+          "deletions": 9,
+          "accepted_lines": 9
+        },
+        "frontend/src/api/admin.ts": {
+          "additions": 2,
+          "deletions": 2,
+          "accepted_lines": 2
+        },
+        "frontend/src/pages/GuidePage.vue": {
+          "additions": 1,
+          "deletions": 1,
+          "accepted_lines": 1
+        },
+        "docs/赴约-架构方案.md": {
+          "additions": 4,
+          "deletions": 4,
+          "accepted_lines": 4
+        },
+        "frontend/src/components/OneKmAnimation.vue": {
+          "additions": 4,
+          "deletions": 4,
+          "accepted_lines": 4
+        },
+        "frontend/index.html": {
+          "additions": 20,
+          "deletions": 20,
+          "accepted_lines": 20
+        },
+        "backend/src/routes/admin.ts": {
+          "additions": 4,
+          "deletions": 1,
+          "accepted_lines": 4
+        }
+      }
+    }
+  }
+}
