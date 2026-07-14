@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-// history mode:URL 不带 #,避免微信安全访问中间页吞 hash
-// 需要 nginx 配 try_files SPA fallback(已配)
+// hash mode:URL 带 #/，兼容 GitHub Pages 无 SPA fallback 的问题
+// 所有资源路径仍由 BASE_URL 处理，确保子路径部署正确
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
