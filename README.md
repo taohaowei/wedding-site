@@ -52,6 +52,40 @@ npm run dev
 
 > ⚠️ 注意：GitHub Pages 不支持后端，RSVP 提交和管理后台会以 **mock 模式** 运行（数据不持久化），适合作为视觉预览。如需完整功能请部署到自己的服务器。
 
+## 后台管理（查看宾客信息）
+
+后端启动后，访问 `http://localhost:3001/admin` 或在部署后的域名 `/admin` 路径进入后台。
+
+### 功能
+
+| 功能 | 说明 |
+|------|------|
+| **RSVP 列表** | 查看所有宾客的到场确认、人数、住宿需求、饮食忌口、留言 |
+| **CSV 导出** | 一键导出全部 RSVP 数据为 CSV 文件（含 IP、User-Agent） |
+| **Session 鉴权** | 密码登录，7 天有效，HttpOnly Cookie |
+
+### 使用方式
+
+```bash
+# 1. 设置管理员密码（环境变量，无默认值）
+export ADMIN_PASSWORD=你的强密码
+
+# 2. 启动后端
+cd backend && npm run build && npm start
+
+# 3. 访问后台
+open http://localhost:3001/admin
+```
+
+登录后在后台可以看到：
+- ✅ 谁确认到场 / 婉拒 / 未确定
+- ✅ 每位宾客的随行人数
+- ✅ 是否需要住宿、预计到达时间
+- ✅ 饮食忌口和留言
+- ✅ 一键导出 CSV（含 IP）
+
+后台前端已集成在 Vite 构建产物中（`frontend/src/pages/AdminPage.vue`），无需额外部署。
+
 ## 项目结构
 
 ```
