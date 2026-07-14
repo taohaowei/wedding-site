@@ -1,0 +1,82 @@
+frontend/src/sections/StorySection.vue
+  a0214483a01657e1 19-23,25,28-30,33-35,76-82
+frontend/src/sections/CoverSection.vue
+  a0214483a01657e1 53,55-56
+docs/距离动画-调研.md
+  a0214483a01657e1 1-68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "30ef705fd38aaca54122548f0614f95baa8b546b",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 17,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/main-gown/_order.json": {
+          "accepted_lines": 5
+        },
+        "frontend/public/photos/engagement/manifest.json": {
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/engagement/_order.json": {
+          "accepted_lines": 6
+        }
+      }
+    },
+    "a0214483a01657e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e61bb103-f3d2-409a-a7ea-c29cbfcd5b57",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 4364,
+      "total_deletions": 8,
+      "accepted_lines": 4432,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "docs/距离动画-调研.md": {
+          "accepted_lines": 68
+        },
+        "docs/screenshots-one-km/01-hangzhou-overview.png": {
+          "additions": 1266,
+          "accepted_lines": 1266
+        },
+        "frontend/src/sections/StorySection.vue": {
+          "additions": 19,
+          "deletions": 6,
+          "accepted_lines": 19
+        },
+        "frontend/src/sections/CoverSection.vue": {
+          "additions": 3,
+          "deletions": 2,
+          "accepted_lines": 3
+        },
+        "d17d2796cb47b5e6c3b6d761da15179f.jpg": {
+          "additions": 472,
+          "accepted_lines": 472
+        },
+        "docs/screenshots-one-km/03-final-1km.png": {
+          "additions": 1362,
+          "accepted_lines": 1362
+        },
+        "docs/screenshots-one-km/02-zoom-to-xiaoshan.png": {
+          "additions": 1242,
+          "accepted_lines": 1242
+        }
+      }
+    }
+  }
+}
