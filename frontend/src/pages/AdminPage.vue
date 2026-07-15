@@ -21,7 +21,7 @@
         {{ loading ? '登录中…' : '登录' }}
       </button>
       <p v-if="store.errorMsg" class="err">{{ store.errorMsg }}</p>
-      <p class="hint muted">提示:Mock 模式下密码为 <code>demo</code> 或 <code>123456</code></p>
+      <p v-if="mock" class="hint muted">演示模式密码:<code>123</code></p>
     </section>
 
     <!-- 列表 -->
@@ -84,15 +84,17 @@
 import { computed, onMounted, ref } from 'vue'
 import { useAdminStore } from '@/stores/admin'
 import { getExportUrl } from '@/api/admin'
-import { probeBackend } from '@/api/client'
+import { probeBackend, isMock } from '@/api/client'
 
 const store = useAdminStore()
 const pwd = ref('')
 const loading = ref(false)
+const mock = ref(false)
 const exportUrl = getExportUrl()
 
 onMounted(async () => {
   await probeBackend()
+  mock.value = isMock()
   // 用现有 cookie / mock 状态尝试拉一次,200 即视为已登录
   await store.loadRsvps()
 })
