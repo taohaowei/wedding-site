@@ -3,8 +3,8 @@ import type { ApiResp, RsvpRecord } from './types'
 
 export async function adminLogin(password: string): Promise<ApiResp> {
   if (isMock()) {
-    if (password === 'demo' || password === '123456') { mockLogged = true; return { ok: true } }
-    return { ok: false, error: '密码错误(mock 模式 - 可用 demo/123456)' }
+    if (password === '123' || password === 'demo' || password === '123456') { mockLogged = true; return { ok: true } }
+    return { ok: false, error: '密码错误(演示模式 - 可用 123)' }
   }
   try {
     const r = await http.post('/admin/login', { password })

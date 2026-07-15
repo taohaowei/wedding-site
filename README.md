@@ -54,7 +54,11 @@ npm run dev
 
 ## 后台管理（查看宾客信息）
 
-后端启动后，访问 `http://localhost:3001/admin` 或在部署后的域名 `/admin` 路径进入后台。
+👉 **在线体验（演示模式）**：<https://taohaowei.github.io/wedding-site/#/admin>
+
+> 演示密码：`123`（GitHub Pages 无后端，登录后展示的是内置示例数据，可参考后台样式）
+
+真实部署时，后端启动后访问部署域名的 `/admin` 路径登录（密码由 `ADMIN_PASSWORD` 环境变量设置）。
 
 ### 功能
 
