@@ -1,0 +1,68 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8-ntes.9",
+  "base_commit_sha": "04cbfda4ac8bf42bf3298097d951db9485486482",
+  "prompts": {
+    "9082d1f98c2a273a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1e5de37-8634-4f75-b5a0-5db8bafaeb0a",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 17,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/main-gown/_order.json": {
+          "accepted_lines": 5
+        },
+        "frontend/public/photos/engagement/manifest.json": {
+          "accepted_lines": 6
+        },
+        "frontend/public/photos/engagement/_order.json": {
+          "accepted_lines": 6
+        }
+      }
+    },
+    "a0214483a01657e1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e61bb103-f3d2-409a-a7ea-c29cbfcd5b57",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "taohaowei",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 5509,
+      "accepted_lines": 0,
+      "overriden_lines": 0,
+      "per_file_stats": {
+        "frontend/public/photos/outdoor-bw/前后走.jpg": {
+          "deletions": 685
+        },
+        "frontend/public/photos/outdoor-bw/搂肩合照.jpg": {
+          "deletions": 820
+        },
+        "frontend/public/photos/french/合照，正式.jpg": {
+          "deletions": 1033
+        },
+        "frontend/public/photos/outdoor-bw/霸总强吻.jpg": {
+          "deletions": 882
+        },
+        "frontend/public/photos/french/女单，温婉.jpg": {
+          "deletions": 667
+        },
+        "frontend/public/photos/outdoor-bw/光影对视（绝美），电影感.jpg": {
+          "deletions": 764
+        },
+        "frontend/public/photos/french/女单，露背.jpg": {
+          "deletions": 658
+        }
+      }
+    }
+  }
+}
